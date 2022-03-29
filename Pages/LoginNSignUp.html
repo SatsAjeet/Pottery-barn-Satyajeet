@@ -5,9 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      .forms {
+        width: 90%;
+        height: 80vh;
+        margin: 80px auto;
+        border: 1px solid green;
+      }
+
+      .login {
+        width: 540px;
+        height: 460px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        padding: 20px;
+      }
+
+      .login > p {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 44px;
+        color: rgb(98, 248, 98);
+      }
+    </style>
   </head>
   <body>
-    
+    <!-- Forms Container -->
+    <div class="forms">
+      <div class="login">
+        <h2>SIGNIN</h2>
+        <p>
+          You can now sign into any of our family of brands using your account!
+          If you don't have an account, create an account.
+        </p>
+        <form action="">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+
+          <label for="pass">Password</label>
+          <input type="password" id="pass" required />
+        </form>
+      </div>
+    </div>
   </body>
 
   <!-- Components( or ES6 modules ) for working with import/export -->
