@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family:Helvetica,Arial,sans-serif;
+        }
+#top{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    background-color: #E6E3DE;
+    height: 60px;
+    text-align: center;
+    font-size:small;
+    margin-bottom:80px;
+    
+}
+#top a{
+    color: black;
+    padding-top: 10px;;
+}
+#part1{
+/* border: 1px solid black; */
+    display:grid;
+    grid-template-columns: 10% 55% 30%;
+    gap:25px;
+    margin-bottom:20px
+}
+/* #part1 div{
+    border: 1px solid black;
+} */
+#left img{
+    padding-left: 40px;
+}
+#center img{
+    width: 100%;
+    height: 700px
+}
+#right div{
+    
+    height: 150px;
+    
+
+}
+#btn1{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height:40px;
+    margin-bottom: 10px;
+}
+.btn2{
+    background-color:#E6E3DE;
+    color:black;
+    width: 100%;
+    height:40px;
+    margin-bottom: 10px;
+}
+#part2{
+    
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    width: 80%;
+    margin:auto;
+    margin-bottom:20px;
+    font-size: small;
+}
+#para{
+    
+    
+    width: 60%;
+    margin:auto;
+    margin-bottom:40px;
+    font-size: large;
+    text-align: center;
+    padding-top:40px;
+    padding-bottom:40px;
+    background-color:#E6E3DE;
+}
+#two{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    width:80%;
+    margin:auto;
+    font-size:25px;
+    gap:50px;
+}
+#qa{
+    display:flex;
+    width:100%;
+    margin:auto;
+    
+}
+#qa p{
+    padding-top:5px;
+}
+.chat{
+    width:90%;
+    margin:auto;
+    background-color: #E6E3DE;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    margin-bottom: 40px;
+}
+#chatin{
+    width:60%;
+    border:none;
+    height:30px;
+}
+h3{
+    padding-left: 40px;
+}
+#how p{
+    font-size:15px;
+}
+#last {
+width:95%;
+margin:auto;
+border:1px solid black;
+margin-bottom:40px;
+}
+#last img{
+    width:100%;
+    height:500px;
+}
+    </style>
+</head>
+<body>
+    <div id="top">
+        <a href="">FREE SHIPPING ON 1000s OF ITEMS
+            <br>
+            SHOP NOW ></a>
+            <a href="">SPRING WAREHOUSE EVENT - UP TO 60% OFF
+                <br>
+                FURNITURE, BEDDING, DECOR & MORE ></a>
+         <a href="">JUST IN: NEW ARRIVALS
+             <br>
+            SHOP NOW ></a>       
+    </div>
+    <div id="part1">
+        <div id="left">
+            <img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0644/fallon-forged-iron-globe-chandelier-4-r.jpg" alt="1">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0644/fallon-forged-iron-globe-chandelier-2-r.jpg" alt="2">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0644/fallon-forged-iron-globe-chandelier-1-r.jpg" alt="3">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0644/fallon-forged-iron-globe-chandelier-r.jpg" alt="4">
+        </div>
+        <div id="center">
+            <img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0644/fallon-forged-iron-globe-chandelier-4-z.jpg" alt="full">
+        </div>
+        <div id="right">
+            <div>
+            <p>NEW</p>
+            <p>Fallon Forged-Iron Globe Chandelier
+                <br>
+                $799</p>
+    <p>As low as $73/month or 0% APR with Affirm. Learn More</p>
+    </div>
+    <div>
+        <p>ADD ITEMS</p>
+        
+<input type="checkbox"/>
+
+<p style="font-size:12px;">ADD INSTALLATION
+    <br>
+    Powered byPorch
+    
+    </p>
+    </div>
+    <div> <p>SHIP TO HOME</p>
+        <p>Enter Postal Code for a better delivery estimate.
+</p>
+
+           <p> FREE IN-STORE OR CURBSIDE PICKUP
+            This item is not available for free store pickup.</p>
+    </div>
+    <button id="btn1">ADD TO CART</button>
+    <button class="btn2">MAKE A FREE DESIGN APPOINTMENT</button>
+    <button class="btn2"> ADD TO REGISTRY</button>
+
+        </div>
+       
+    </div>
+    <div id="part2">
+<p>WHY YOU'LL LOVE IT</p>
+<p>PRODUCT DETAILS  </p>
+<p>DIMENSIONS</p>
+<p>RESPONSIBLY MADE</p>
+<p>Q & A</p>
+<p>SHIPPING & RETURNS</p>
+    </div>
+    <div id="para"><p>Sturdy and exuding industrial style, Fallon is marked by the contrast between its heavy metal fixtures and their delicate-looking construction. A lean metal cage forms an airy architecture in our chandelier, an innovative take on the traditional lantern that combines organic curves and seamless joins. The fixture’s hand-forged finish adds depth and dimension.</p></div>
+    <h3>PRODUCT DETAILS</h3>
+<div id="product_details"></div>
+<h3>DIMENSIONS</h3>
+<div id="dimensions"></div>
+<h3> GOOD FOR PEOPLE, GOOD FOR THE PLANET </h3>
+
+<div id="two">
+    <div><p>From restoring forests to creating
+    healthier homes, the products you purchase
+    make a difference at home and beyond.
+    </p> </div>
+    <div id="how">
+<p>HOW THIS PRODUCT IS RESPONSIBLY MADE </p>
+
+<p>    FAIR TRADE <br>
+    Help ensure fair and safe labor practices, improve livelihoods and empower workers to invest in their communities.</p>
+    </div>
+</div>
+<h3>ALSO IN THIS COLLECTION</h3>
+<div id="coll"></div>
+<h3>YOU MAY ALSO NEED</h3>
+<div id="need"></div>
+<h3>PEOPLE ALSO VIEWED
+</h3>
+<div id="view"></div>
+
+<div id="qa">
+ <h3>QUESTION &ANSWER </h3> 
+<p>Powered by TurnTo</p>
+
+</div>
+<div class="chat">
+    <div><input type="text" id="chatin" placeholder="Have a question about this? Ask a Pottery Barn associate."></div>
+    <p>Start typing your question and we'll check if it was already asked and answered. Learn More
+    </p>
+</div>
+<div class="chat"><p>No questions have been asked about this item. Be the first!
+</p></div>
+<div id="shipping">
+    
+</div>
+<div id="last">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202150/0002/images/pip/design-services-banner-bottom.jpg" alt="last">
+</div>
+</body>
+</html>
+<script src="file.js"></script>
