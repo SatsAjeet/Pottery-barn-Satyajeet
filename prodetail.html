@@ -5,131 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            font-family:Helvetica,Arial,sans-serif;
-        }
-#top{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    
-    background-color: #E6E3DE;
-    height: 60px;
-    text-align: center;
-    font-size:small;
-    margin-bottom:80px;
-    
-}
-#top a{
-    color: black;
-    padding-top: 10px;;
-}
-#part1{
-/* border: 1px solid black; */
-    display:grid;
-    grid-template-columns: 10% 55% 30%;
-    gap:25px;
-    margin-bottom:20px
-}
-/* #part1 div{
-    border: 1px solid black;
-} */
-#left img{
-    padding-left: 40px;
-}
-#center img{
-    width: 100%;
-    height: 700px
-}
-#right div{
-    
-    height: 150px;
-    
-
-}
-#btn1{
-    background-color: black;
-    color: white;
-    width: 100%;
-    height:40px;
-    margin-bottom: 10px;
-}
-.btn2{
-    background-color:#E6E3DE;
-    color:black;
-    width: 100%;
-    height:40px;
-    margin-bottom: 10px;
-}
-#part2{
-    
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    width: 80%;
-    margin:auto;
-    margin-bottom:20px;
-    font-size: small;
-}
-#para{
-    
-    
-    width: 60%;
-    margin:auto;
-    margin-bottom:40px;
-    font-size: large;
-    text-align: center;
-    padding-top:40px;
-    padding-bottom:40px;
-    background-color:#E6E3DE;
-}
-#two{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    width:80%;
-    margin:auto;
-    font-size:25px;
-    gap:50px;
-}
-#qa{
-    display:flex;
-    width:100%;
-    margin:auto;
-    
-}
-#qa p{
-    padding-top:5px;
-}
-.chat{
-    width:90%;
-    margin:auto;
-    background-color: #E6E3DE;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 60px;
-    margin-bottom: 40px;
-}
-#chatin{
-    width:60%;
-    border:none;
-    height:30px;
-}
-h3{
-    padding-left: 40px;
-}
-#how p{
-    font-size:15px;
-}
-#last {
-width:95%;
-margin:auto;
-border:1px solid black;
-margin-bottom:40px;
-}
-#last img{
-    width:100%;
-    height:500px;
-}
-    </style>
+    <link rel="stylesheet" href="./Styles/prodetail.css">
 </head>
 <body>
     <div id="top">
@@ -233,7 +109,31 @@ margin-bottom:40px;
 </div>
 <div class="chat"><p>No questions have been asked about this item. Be the first!
 </p></div>
+<h3>SHIPPING & RETURNS
+</h3>
 <div id="shipping">
+    <div><h5>FLAT RATE DELIVERY
+    </h5>
+    <p>An unlimited number of eligible furniture and select non-furniture items can be delivered for one flat rate per shipping address. Your order will ship when all items are ready for delivery. Fee varies by location and order total.  <br>
+        See your rate
+        </p>
+</div>
+    <div>
+        <h5>WHITE GLOVE SERVICE
+        </h5>
+        <p>Items are delivered to your room of choice by appointment, then unpacked and fully assembled by a skilled two-person team. Includes packaging removal and recycling. Fee varies by location and order total. (Doorstep delivery does not include assembly)
+<br>
+            Learn More
+            </p>
+    </div>
+    <div>
+        <h5>RETURN POLICY
+        </h5>
+        <p>You can return eligible items within 30 days of receiving an order or 7 days for Quick Ship upholstery items for a refund of the merchandise value. Made-to-Order furniture is not eligible for returns.
+<br>
+            See returns policy
+            </p>
+    </div>
     
 </div>
 <div id="last">
@@ -241,4 +141,4 @@ margin-bottom:40px;
 </div>
 </body>
 </html>
-<script src="file.js"></script>
+<script src="./dataScripts/prodfile.js"></script>
