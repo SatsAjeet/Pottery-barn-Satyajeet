@@ -1,11 +1,11 @@
 
 
 
-let arrview= JSON.parse(localStorage.getItem("cart1"));
+let arrboth= JSON.parse(localStorage.getItem("cart1"));
 
-console.log(arrview);
+console.log(arrboth);
 
-arrview.map(function(ele){
+arrboth.map(function(ele){
     document.querySelector("#center").innerHTML="";
     let div=document.createElement("div");
     
