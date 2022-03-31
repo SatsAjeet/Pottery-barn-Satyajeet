@@ -3,6 +3,9 @@ let collec=JSON.parse(localStorage.getItem("collection"));
 
 collec.map(function(ele){
     let div=document.createElement("div");
+    div.addEventListener("click",function(){
+        productcoll(ele);
+    })
 
     let img=document.createElement("img");
     img.src=ele.image;
@@ -17,8 +20,17 @@ collec.map(function(ele){
 
     document.querySelector("#coll").append(div);
 })
+let arr= JSON.parse(localStorage.getItem("cart1")) || [];
 
 
+function productcoll(ele){
+    console.log(ele);
+    arr.push(ele);
+
+localStorage.setItem("cart1",JSON.stringify(arr));
+
+    window.location.href="prodetail.html";
+}
 
 
 
@@ -29,6 +41,10 @@ let view=JSON.parse(localStorage.getItem('view'));
 
 view.map(function(ele){
     let div=document.createElement("div");
+
+    div.addEventListener("click",function(){
+        productview(ele);
+    })
 
     let img=document.createElement("img");
     img.src=ele.image;
@@ -43,5 +59,31 @@ view.map(function(ele){
 
     document.querySelector("#view").append(div);
 })
+
+let arr1= JSON.parse(localStorage.getItem("cart1"));
+
+
+
+function productview(ele) {
+console.log(ele);
+
+arr1.push(ele);
+localStorage.setItem("cart1",JSON.stringify(arr1));
+
+window.location.href="prodetail.html";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
