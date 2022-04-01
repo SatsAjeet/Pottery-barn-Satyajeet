@@ -22,6 +22,7 @@ arrboth.map(function(ele){
     let price=document.createElement("p");
     price.innerText=ele.price;
 
+    
     let btn=document.createElement("button");
     btn.setAttribute("id",'btn1')
     btn.innerText="ADD TO CART";
@@ -45,5 +46,5 @@ function cartItem(ele){
 
     cart.push(ele);
     localStorage.setItem("cart_data",JSON.stringify(cart));
-    window.location.href="cart.html";
+    window.location.href="./Pages/cart.html";
 }
