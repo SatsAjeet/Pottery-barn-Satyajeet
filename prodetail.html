@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Styles/prodetail.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
+    <link rel="stylesheet" href="./Styles/navbar.css">
+    <link rel="stylesheet" href="./index.css">
+    
 </head>
 <body>
-    <div id="top">
+    <div id="header"></div>
+    <div id="toper">
         <a href="">FREE SHIPPING ON 1000s OF ITEMS
             <br>
             SHOP NOW ></a>
@@ -139,7 +144,27 @@
 <div id="last">
     <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202150/0002/images/pip/design-services-banner-bottom.jpg" alt="last">
 </div>
+<div id="footer"></div>
 </body>
 </html>
+<script type="module">
+    import navbar from "../Pages/components/navbar.js"
+
+    //console.log(navbar);
+
+    let top=document.getElementById("header");
+    top.innerHTML =navbar();
+</script>
 <script src="./dataScripts/prodfile.js"></script>
 <script src="./dataScripts/addtocart.js"></script>
+<script type=module>
+
+    import footer from "../Pages/components/footer.js";
+
+    //console.log("footer",footer)
+
+    let down=document.getElementById("footer");
+    down.innerHTML = footer();
+</script>
+
+
