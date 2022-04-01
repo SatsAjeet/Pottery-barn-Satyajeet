@@ -1,4 +1,6 @@
 function navbar(){
+
+    return `
         <div id="top">
             <div id="top1">
             <p>PB Contract</p>
@@ -174,6 +176,9 @@ function navbar(){
             <P>SPRING WAREHOUSE EVENT</P></div>
             <div class="forth-nav-class" style="letter-spacing: 1px;"><h6>Up to 60% off Furniture, Bedding, Decor & More</h6>
                <button id="btn">SHOP NOW</button></div>
+
+        </div>
+        `
 
 }
 export default navbar;
