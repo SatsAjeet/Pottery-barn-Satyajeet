@@ -1,0 +1,166 @@
+*{
+    font-family:Helvetica,Arial,sans-serif;
+}
+#top{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+
+background-color: #E6E3DE;
+height: 60px;
+text-align: center;
+font-size:small;
+margin-bottom:80px;
+
+}
+#top a{
+color: black;
+padding-top: 10px;;
+}
+#part1{
+/* border: 1px solid black; */
+display:grid;
+grid-template-columns: 10% 55% 30%;
+gap:25px;
+margin-bottom:20px
+}
+/* #part1 div{
+border: 1px solid black;
+} */
+#left img{
+padding-left: 40px;
+}
+#center img{
+width: 100%;
+height: 700px
+}
+#right div{
+
+height: 150px;
+
+
+}
+#btn1{
+background-color: black;
+color: white;
+width: 100%;
+height:40px;
+margin-bottom: 10px;
+}
+.btn2{
+background-color:#E6E3DE;
+color:black;
+width: 100%;
+height:40px;
+margin-bottom: 10px;
+}
+#part2{
+
+display: grid;
+grid-template-columns: repeat(6,1fr);
+width: 80%;
+margin:auto;
+margin-bottom:20px;
+font-size: small;
+}
+#para{
+
+
+width: 60%;
+margin:auto;
+margin-bottom:40px;
+font-size: large;
+text-align: center;
+padding-top:40px;
+padding-bottom:40px;
+background-color:#E6E3DE;
+}
+#two{
+display:grid;
+grid-template-columns: repeat(2,1fr);
+width:80%;
+margin:auto;
+font-size:25px;
+gap:50px;
+}
+#qa{
+display:flex;
+width:100%;
+margin:auto;
+
+}
+#qa p{
+padding-top:5px;
+}
+.chat{
+width:90%;
+margin:auto;
+background-color: #E6E3DE;
+padding-top: 50px;
+padding-bottom: 50px;
+padding-left: 60px;
+margin-bottom: 40px;
+}
+#chatin{
+width:60%;
+border:none;
+height:30px;
+}
+h3{
+padding-left: 40px;
+}
+#how p{
+font-size:15px;
+}
+#last {
+width:95%;
+margin:auto;
+
+margin-bottom:40px;
+}
+#last img{
+width:100%;
+height:500px;
+}
+#shipping{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+width:95%;
+
+margin:auto;
+margin-bottom:40px;
+gap:60px;
+border-top: 1px solid #E6E3DE;
+}
+#view{
+    border-top: 1px solid grey;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+    width:95%;
+    margin:auto;
+}
+#view div{
+    
+    margin-top: 15px;
+}
+#view img{
+    width: 100%;
+}
+#coll{
+    border-top: 1px solid grey;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+    width:95%;
+    margin:auto;
+ 
+}
+
+
+#coll div{
+    margin-top: 15px; 
+}
+
+#coll img{
+    width: 100%;
+}

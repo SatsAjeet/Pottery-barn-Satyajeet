@@ -1,0 +1,46 @@
+#footer{
+    background-color: #e6e3de;
+    width: 100%;
+    height: 450px;
+
+}
+#footer-main{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-main-class{
+    width: 200px;
+    height: 300px;
+  
+  
+}
+.footer-main-class>ul{
+    list-style: none;
+    font-size: smaller;
+ line-height: 25px;
+
+}
+h5{
+    padding-left: 30px;
+}
+#email{
+    width: 400px;
+    height: 300px;
+    margin-top: 40px;
+}
+#email>div>p{
+    font-size: x-small;
+}
+#footer-input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid grey;
+}
+#footer-btn{
+height: 35px;
+color: white;
+background-color: black;
+border: none;
+}
