@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/navbar.css">
+    <style>
+         #discount{
+            margin-bottom: 2px;
+            text-align: left;
+            font-size: 16px;
+        }
+        #discount~p{
+            margin-top: 2px;
+            
+        }
+        #subTotal{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #visa,#paypal{
+            margin-bottom: 10px;
+            background-color: rgb(228, 228, 228);
+            height: 35px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        #orderSummary p{
+            font-size: 14px;
+        }
+        #longbar{
+            width: 100%;
+            background-color:rgb(120, 120, 120);
+            height: 1px;
+            margin: 10px auto;
+        }
+        #checkout{
+            width: 100%;
+            height: 40px;
+            color: white;
+            background-color: #990000;
+            border: 0px solid;
+            margin: 10px auto;
+        }
+        #orderSummary{
+            width: 25%;
+            height:800px;
+        }
+        #container{
+            width: 60%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #payment{
+            width: 73%;
+            background-color: rgb(218, 218, 218);
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="container">
+        <div id="payment"></div>
+        <div id="orderSummary">
+        <h3>Order Summary</h3>
+        <div id="subTotal"></div>
+        <p>Total does not include shipping, gift wrap, discounts & tax.</p>
+        <h5></h5>
+        <h5 id="discount">EARN 10% BACK IN REWARDS</h5>
+        <p>during your first 30 days as a cardmember2, or get 12-month special financing on purchases of $750+.3 Learn More</p>
+        <div id="visa"><input type="radio">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202203/0031/images/shoppingcart/order-summary/Visa_Inc._logo.svg" alt="">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/mastercard.svg" alt="">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/amex.svg" alt="">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/discover.svg" alt="">
+    </div>
+        <div id="paypal"><input type="radio">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202214/0001/images/shoppingcart/order-summary/PayPal_logo.svg" alt=""></div>
+        <div id="longbar"></div>
+        <p>By continuing with your purchase you agree to our terms and conditions and privacy policy.</p>
+        <button id="checkout">CHECKOUT</button>
+        <p>Our Shopping cart reflects each item's most recent price. Price and availability is subject to change.</p>
+        <p>As low as $73/month or 0% APR with Affirm. Learn more</p>
+
+    </div>
+    </div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js"
+    document.querySelector("#navbar").innerHTML = navbar()
+</script>
+<script>
+    let data= JSON.parse(localStorage.getItem("collection")) || []
+    let totalPrice_summary= document.getElementById("subTotal")
+    let totalSum = JSON.parse(localStorage.getItem("totalPrice"))
+    let one= document.createElement("div")
+    let two = document.createElement("h4")
+    one.innerHTML =`Total(${data.length} Items)`
+    two.innerHTML = `$${totalSum}`
+    totalPrice_summary.append(one,two) 
+</script>

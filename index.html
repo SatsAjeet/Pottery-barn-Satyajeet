@@ -7,12 +7,20 @@
     <title>Document</title>
 
     <!-- Include the CSS styling File for Styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/navbar.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
 <link rel="stylesheet" href="/Styles/slider.css">
     <link rel="stylesheet" href="/Styles/index.css" />
+    <link rel="stylesheet" href="home.css">
   </head>
   <body>
     <!-- Gyan Header Section  -->
+    <header id="header"></header>
     <!-- gyan'slider section -->
+    <div id="navbar"></div>
     <div id="slider">
       <iframe  id="slider-iframe" src="https://player.vimeo.com/video/675641941/?h=7e0379c951&loop=1&background=1&autoplay=true" frameborder="0"></iframe>
   </div>
@@ -41,6 +49,54 @@
 <div><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/020.jpg" alt=""></div>
 <div><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/024.jpg" alt=""></div>
 </div>
-   
+
+<!-- divya -->
+<div id="arriveimg"></div> 
+
+   <div id="arriveimg1"></div>
+   <div id="qa">
+   <img src="https://assets.pbimgs.com/pbimgs/rk/images/dp/ecm/202209/1386/001/009.jpg" alt="comp">    
+   </div>
+   <div id="scroll"></div>
+
+   <div id="grid"></div>
+   <div id="arriveimg2"></div>
+
+   <div id="more" >
+     <img src="https://assets.pbimgs.com/pbimgs/rk/images/dp/ecm/202209/1386/001/006.jpg" alt="more">
+       
+   </div>
+
+   <div id="three"></div>
+   <div id="arriveimg3"></div>
+   <div id="arriveimg4"></div>
+   <div id="arriveimg5"></div>
+   <div id="arriveimg6"></div>
+   <div id="discover">
+       <img src="https://assets.pbimgs.com/pbimgs/rk/images/dp/ecm/202210/1453/001/001.jpg" alt="dis">
+   </div>
+   <div id="two"></div>
+<div id="seven"></div>
+   <div id="five"></div>
+   <div id="footer"></div>
     </body>
+<<<<<<< HEAD
 </html>
+<script type="module">
+    import navbar from "../Pages/components/navbar.js"
+    document.querySelector("#navbar").innerHTML = navbar()
+    import footer from "../Pages/components/footer.js"
+    document.querySelector("#footer").innerHTML = footer()
+
+</script>
+<script src="home.js"></script>
+=======
+    <script type="module">
+      import navbar from "./components/navbar.js"
+      console.log(navbar)
+      let nav =document.getElementById("header")
+      nav.innerHTML=navbar()
+    </script>
+
+</html>
+>>>>>>> 6796e8a9c24470decf9f173e44f5f3af8070ec58
