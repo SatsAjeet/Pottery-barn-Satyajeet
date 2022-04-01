@@ -12,6 +12,7 @@
   </head>
   <body>
     <!-- Gyan Header Section  -->
+    <header id="header"></header>
     <!-- gyan'slider section -->
     <div id="slider">
       <iframe  id="slider-iframe" src="https://player.vimeo.com/video/675641941/?h=7e0379c951&loop=1&background=1&autoplay=true" frameborder="0"></iframe>
@@ -43,4 +44,10 @@
 </div>
    
     </body>
+    <script type="module">
+      import navbar from "./components/navbar.js"
+      console.log(navbar)
+      let nav =document.getElementById("header")
+      nav.innerHTML=navbar()
+    </script>
 </html>
