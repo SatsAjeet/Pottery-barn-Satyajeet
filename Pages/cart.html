@@ -168,7 +168,7 @@
 <script src="../dataScripts/prodfile.js"></script>
 <script>
     const visible = ()=>{
-        let data= JSON.parse(localStorage.getItem("collection")) || []
+        let data= JSON.parse(localStorage.getItem("cart_data")) || []
         let cartContainer = document.querySelector("#cartContainer")
         cartContainer.innerHTML = null
             let firstdata = document.createElement("div")
@@ -194,7 +194,7 @@
                 remove.innerText = "Remove"
                 remove.addEventListener("click",function(){
                     data.splice(index,1)
-                    localStorage.setItem("collection",JSON.stringify(data))
+                    localStorage.setItem("cart_data",JSON.stringify(data))
                     visible()
                 })
                 let bar = document.createElement("div")
@@ -248,7 +248,7 @@
                 itemTotalPrice.innerText = "Item Total"
                 console.log(index)
                 data[index].qty = quantity
-                localStorage.setItem("collection",JSON.stringify(data))
+                localStorage.setItem("cart_data",JSON.stringify(data))
                 total()
                 })
 
