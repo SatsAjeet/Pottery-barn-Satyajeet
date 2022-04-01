@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/navbar.css">
+    <link rel="stylesheet" href="../Styles/header.css">
+    <style>
+        #coll,#view{
+            display: flex;
+            width: 100%;
+            height: 350px;
+            justify-content: space-between;
+            margin: 50px auto;
+            /* border: 1px solid red */
+        }
+        #coll>div, #view>div{
+            width: 20%;
+            height: 100%;
+            gap: 10px;
+            font-size: 14px;
+            /* border: 1px solid green */
+
+        }
+        #coll>div>img,#view>div>img{
+            height: 70%;
+        }
+        #adv{
+            width: 70%;
+            margin: auto;
+        }
+        #container{
+            width: 70%;
+            margin: auto;
+            background-color: #f8f8f8;
+        }
+        .productdiv{
+            display: flex;
+            width: 675px;
+            height: 315px;
+            background-color: white;
+            margin: 20px;
+            border: 1px solid rgb(185, 185, 185);
+        }
+        .productdiv>div>img{
+            height: 60%;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #button_div{
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        #button_div>button{
+            background-color: white;
+            border: 0px solid;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        #title:hover{
+            cursor:pointer;
+            text-decoration: underline;
+        }
+        #container p{
+            font-size: 18px;
+            margin-top: 2px;
+        }
+        #container h4{
+            margin-bottom: 2px;
+        }
+        #firstdata{
+            margin: 20px;
+        }
+        #bar{
+            width: 1px;
+            height: 15px;
+            background-color: rgb(119, 119, 119);
+            /* border: 1px solid black; */
+        }
+        #price_div{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #price_div input{
+            width: 50px;
+        }
+        #productPrice{
+            width: 200px;
+        }
+    </style>
+    <script src="../dataScripts/prodata.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="container"></div>
+    <div id="adv">
+    <div><h3>You May Also Like</h3>
+        <div id="coll"></div>
+    </div>
+    <div><h3>Recently Viewed</h3>
+        <div id="view"></div>
+    </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js"
+    document.querySelector("#navbar").innerHTML = navbar()
+    import footer from "./components/header.js"
+    document.querySelector("#footer").innerHTML = footer()
+    let data= JSON.parse(localStorage.getItem("collection")) || []
+    visible(data)
+</script>
+<script src="../dataScripts/prodfile.js"></script>
+<script>
+    const visible = (data)=>{
+        let container = document.querySelector("#container")
+        container.innerHTML = null
+            let firstdata = document.createElement("div")
+            firstdata.setAttribute("id","firstdata")
+            let h1= document.createElement("h1")
+            h1.innerText = "Shopping Cart"
+            let h2= document.createElement("h2")
+            h2.innerText = "Shipping"
+            firstdata.append(h1,h2)
+            console.log(data)
+            container.append(firstdata)
+            data.forEach((elem)=>{
+                let div = document.createElement("div")
+                div.setAttribute("class","productdiv")
+
+                let left = document.createElement("div")
+                let image= document.createElement("img")
+                image.src= elem.image
+                let save_to_later = document.createElement("button")
+                save_to_later.innerText = "Save For Later"
+                let remove = document.createElement("button")
+                remove.innerText = "Remove"
+                let bar = document.createElement("div")
+                bar.setAttribute("id","bar")
+                let button_div = document.createElement("div")
+                button_div.setAttribute("id", "button_div")
+                button_div.append(save_to_later,bar,remove)
+                left.append(image,button_div)
+
+
+                let right = document.createElement("div")
+                let title = document.createElement("h3")
+                title.innerText = elem.title
+                title.setAttribute("id", "title")
+                let last= document.createElement("h4")
+                let last1= document.createElement("p")
+                last.innerText = "In Stock & Ready to Ship"
+                last1.innerText = "Enter Postal Code for a better delivery estimate."
+
+                let price_div = document.createElement("div")
+                price_div.setAttribute("id", "price_div")
+                let productPrice= document.createElement("div")
+                productPrice.setAttribute("id", "productPrice")
+                let price = document.createElement("p")
+                price.innerText = `$${elem.price}`
+                productPrice.append(price)
+
+                let inputdiv= document.createElement("div")
+                let input= document.createElement("input")
+                let update = document.createElement("button")
+                update.innerText = "Update"
+                let br = document.createElement("br")
+                inputdiv.append(input,br,update)
+                let totalPrice = document.createElement("p")
+                if(input.value == undefined) {{
+                    input.value= 1
+                }}
+                totalPrice.innerText = `$${elem.price * input.value}`
+
+                price_div.append(productPrice,inputdiv,totalPrice)
+
+                right.append(title,price_div,last,last1)
+                div.append(left,right)
+                container.append(div)
+            })
+            
+        }
+
+</script>
