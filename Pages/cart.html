@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/navbar.css">
-    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
     <style>
         #coll,#view{
             display: flex;
@@ -34,13 +34,25 @@
             margin: auto;
         }
         #container{
-            width: 70%;
+            width: 73%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #cartContainer{
+            width: 73%;
             margin: auto;
             background-color: #f8f8f8;
         }
+        #orderSummary{
+            width: 25%;
+            height:800px;
+            background-color: rgb(212, 212, 212);
+        }
         .productdiv{
             display: flex;
-            width: 675px;
+            justify-content: space-around;
+            width: 95%;
             height: 315px;
             background-color: white;
             margin: 20px;
@@ -57,22 +69,28 @@
             align-items: center;
             justify-content: flex-start;
         }
-        #button_div>button{
+        #button_div>button, #price_div button{
             background-color: white;
             border: 0px solid;
             text-decoration: underline;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
+        }
+        #right{
+            width: 63%;
+        }
+        #left{
+            width: 35%;
         }
         #title:hover{
             cursor:pointer;
             text-decoration: underline;
         }
-        #container p{
+        #cartContainer p{
             font-size: 18px;
             margin-top: 2px;
         }
-        #container h4{
+        #cartContainer h4{
             margin-bottom: 2px;
         }
         #firstdata{
@@ -86,21 +104,45 @@
         }
         #price_div{
             display:flex;
-            justify-content: space-between;
+            width: 50%;
+            justify-content: space-around;
             align-items: center;
         }
         #price_div input{
-            width: 50px;
+            width: 75px;
+            height: 37px;
+            border: 1px solid rgb(177, 177, 177);
+            text-align: center;
+        }
+        #price_div input:focus{
+            outline: none;
         }
         #productPrice{
-            width: 200px;
+            width: 50%;
+        }
+        #mainPrice{
+            display: flex;
+            margin-bottom: 50px;
+        }
+        #inputdiv{
+            display: grid;
+            grid-template-columns: 1;
+            justify-content:center;
+            align-content: center;
         }
     </style>
     <script src="../dataScripts/prodata.js"></script>
 </head>
 <body>
     <div id="navbar"></div>
-    <div id="container"></div>
+    <div id="container">
+    <div id="cartContainer"></div>
+    <div id="orderSummary">
+        <h3>Order Summary</h3>
+        <div id="subTotal"></div>
+
+    </div>
+    </div>
     <div id="adv">
     <div><h3>You May Also Like</h3>
         <div id="coll"></div>
@@ -115,16 +157,16 @@
 <script type="module">
     import navbar from "./components/navbar.js"
     document.querySelector("#navbar").innerHTML = navbar()
-    import footer from "./components/header.js"
+    import footer from "./components/footer.js"
     document.querySelector("#footer").innerHTML = footer()
-    let data= JSON.parse(localStorage.getItem("collection")) || []
-    visible(data)
+    visible()
 </script>
 <script src="../dataScripts/prodfile.js"></script>
 <script>
-    const visible = (data)=>{
-        let container = document.querySelector("#container")
-        container.innerHTML = null
+    const visible = ()=>{
+        let data= JSON.parse(localStorage.getItem("collection")) || []
+        let cartContainer = document.querySelector("#cartContainer")
+        cartContainer.innerHTML = null
             let firstdata = document.createElement("div")
             firstdata.setAttribute("id","firstdata")
             let h1= document.createElement("h1")
@@ -133,62 +175,103 @@
             h2.innerText = "Shipping"
             firstdata.append(h1,h2)
             console.log(data)
-            container.append(firstdata)
-            data.forEach((elem)=>{
+            cartContainer.append(firstdata)
+            data.forEach((elem,index)=>{
                 let div = document.createElement("div")
                 div.setAttribute("class","productdiv")
 
                 let left = document.createElement("div")
+                left.setAttribute("id", "left")
                 let image= document.createElement("img")
                 image.src= elem.image
                 let save_to_later = document.createElement("button")
                 save_to_later.innerText = "Save For Later"
                 let remove = document.createElement("button")
                 remove.innerText = "Remove"
+                remove.addEventListener("click",function(){
+                    data.splice(index,1)
+                    localStorage.setItem("collection",JSON.stringify(data))
+                    visible()
+                })
                 let bar = document.createElement("div")
                 bar.setAttribute("id","bar")
                 let button_div = document.createElement("div")
                 button_div.setAttribute("id", "button_div")
                 button_div.append(save_to_later,bar,remove)
                 left.append(image,button_div)
+                image.addEventListener("click",function(){
+                    localStorage.setItem("product",JSON.stringify(elem))
+                    window.location.href = "prodetail.html"
+                })
 
 
                 let right = document.createElement("div")
+                right.setAttribute("id", "right")
                 let title = document.createElement("h3")
                 title.innerText = elem.title
                 title.setAttribute("id", "title")
+                title.addEventListener("click",function(){
+                    localStorage.setItem("product",JSON.stringify(elem))
+                    window.location.href = "prodetail.html"
+                })
                 let last= document.createElement("h4")
                 let last1= document.createElement("p")
                 last.innerText = "In Stock & Ready to Ship"
                 last1.innerText = "Enter Postal Code for a better delivery estimate."
 
-                let price_div = document.createElement("div")
-                price_div.setAttribute("id", "price_div")
+                let mainPrice= document.createElement("div")
+                mainPrice.setAttribute("id", "mainPrice")
                 let productPrice= document.createElement("div")
                 productPrice.setAttribute("id", "productPrice")
                 let price = document.createElement("p")
                 price.innerText = `$${elem.price}`
                 productPrice.append(price)
 
+                let price_div = document.createElement("div")
+                price_div.setAttribute("id", "price_div")
                 let inputdiv= document.createElement("div")
+                inputdiv.setAttribute("id", "inputdiv")
                 let input= document.createElement("input")
+                let quantity = elem.qty
+
+
                 let update = document.createElement("button")
                 update.innerText = "Update"
+                update.addEventListener("click",function(){
+                quantity= input.value
+                value= elem.price * quantity
+                totalPrice.innerText = `$${value}`
+                itemTotalPrice.innerText = "Item Total"
+                console.log(index)
+                data[index].qty = quantity
+                localStorage.setItem("collection",JSON.stringify(data))
+                total()
+                })
+
+
                 let br = document.createElement("br")
                 inputdiv.append(input,br,update)
                 let totalPrice = document.createElement("p")
-                if(input.value == undefined) {{
-                    input.value= 1
-                }}
-                totalPrice.innerText = `$${elem.price * input.value}`
+                let value= elem.price * quantity
+                let totalPriceDiv = document.createElement("div")
+                let itemTotalPrice = document.createElement("p")
+                itemTotalPrice.innerText = "Item Total"
+                total()
+                function total(){
+                    let totalvalue= data.reduce(function(acc,elem){
+                    return (acc+ elem.price*elem.qty)
+                },0)
+                localStorage.setItem("totalPrice",JSON.stringify(totalvalue))
+                }
+                totalPrice.innerText = `$${value}`
+                totalPriceDiv.append(itemTotalPrice,totalPrice)
 
-                price_div.append(productPrice,inputdiv,totalPrice)
-
-                right.append(title,price_div,last,last1)
+                price_div.append(inputdiv,totalPriceDiv)
+                mainPrice.append(productPrice,price_div)
+                right.append(title,mainPrice,last,last1)
                 div.append(left,right)
-                container.append(div)
+                cartContainer.append(div)
             })
-            
         }
 
 </script>
