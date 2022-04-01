@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/navbar.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
+    <style>
+        #coll,#view{
+            display: flex;
+            width: 100%;
+            height: 350px;
+            justify-content: space-between;
+            margin: 50px auto;
+            /* border: 1px solid red */
+        }
+        #coll>div, #view>div{
+            width: 20%;
+            height: 100%;
+            gap: 10px;
+            font-size: 14px;
+            /* border: 1px solid green */
+
+        }
+        #coll>div>img,#view>div>img{
+            height: 70%;
+        }
+        #adv{
+            width: 70%;
+            margin: auto;
+        }
+        #container{
+            width: 73%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #cartContainer{
+            width: 73%;
+            margin: auto;
+            background-color: #f8f8f8;
+        }
+        #orderSummary{
+            width: 25%;
+            height:800px;
+            background-color: rgb(212, 212, 212);
+        }
+        .productdiv{
+            display: flex;
+            justify-content: space-around;
+            width: 95%;
+            height: 315px;
+            background-color: white;
+            margin: 20px;
+            border: 1px solid rgb(185, 185, 185);
+        }
+        .productdiv>div>img{
+            height: 60%;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #button_div{
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        #button_div>button, #price_div button{
+            background-color: white;
+            border: 0px solid;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #right{
+            width: 63%;
+        }
+        #left{
+            width: 35%;
+        }
+        #title:hover{
+            cursor:pointer;
+            text-decoration: underline;
+        }
+        #cartContainer p{
+            font-size: 18px;
+            margin-top: 2px;
+        }
+        #cartContainer h4{
+            margin-bottom: 2px;
+        }
+        #firstdata{
+            margin: 20px;
+        }
+        #bar{
+            width: 1px;
+            height: 15px;
+            background-color: rgb(119, 119, 119);
+            /* border: 1px solid black; */
+        }
+        #price_div{
+            display:flex;
+            width: 50%;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #price_div input{
+            width: 75px;
+            height: 37px;
+            border: 1px solid rgb(177, 177, 177);
+            text-align: center;
+        }
+        #price_div input:focus{
+            outline: none;
+        }
+        #productPrice{
+            width: 50%;
+        }
+        #mainPrice{
+            display: flex;
+            margin-bottom: 50px;
+        }
+        #inputdiv{
+            display: grid;
+            grid-template-columns: 1;
+            justify-content:center;
+            align-content: center;
+        }
+    </style>
+    <script src="../dataScripts/prodata.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="container">
+    <div id="cartContainer"></div>
+    <div id="orderSummary">
+        <h3>Order Summary</h3>
+        <div id="subTotal"></div>
+        <p>Total does not include shipping, gift wrap, discounts & tax.</p>
+        <h5></h5>
+        <p>during your first 30 days as a cardmember2, or get 12-month special financing on purchases of $750+.3 Learn More</p>
+        <input type="radio">
+
+    </div>
+    </div>
+    <div id="adv">
+    <div><h3>You May Also Like</h3>
+        <div id="coll"></div>
+    </div>
+    <div><h3>Recently Viewed</h3>
+        <div id="view"></div>
+    </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js"
+    document.querySelector("#navbar").innerHTML = navbar()
+    import footer from "./components/footer.js"
+    document.querySelector("#footer").innerHTML = footer()
+    visible()
+</script>
+<script src="../dataScripts/prodfile.js"></script>
+<script>
+    const visible = ()=>{
+        let data= JSON.parse(localStorage.getItem("collection")) || []
+        let cartContainer = document.querySelector("#cartContainer")
+        cartContainer.innerHTML = null
+            let firstdata = document.createElement("div")
+            firstdata.setAttribute("id","firstdata")
+            let h1= document.createElement("h1")
+            h1.innerText = "Shopping Cart"
+            let h2= document.createElement("h2")
+            h2.innerText = "Shipping"
+            firstdata.append(h1,h2)
+            console.log(data)
+            cartContainer.append(firstdata)
+            data.forEach((elem,index)=>{
+                let div = document.createElement("div")
+                div.setAttribute("class","productdiv")
+
+                let left = document.createElement("div")
+                left.setAttribute("id", "left")
+                let image= document.createElement("img")
+                image.src= elem.image
+                let save_to_later = document.createElement("button")
+                save_to_later.innerText = "Save For Later"
+                let remove = document.createElement("button")
+                remove.innerText = "Remove"
+                remove.addEventListener("click",function(){
+                    data.splice(index,1)
+                    localStorage.setItem("collection",JSON.stringify(data))
+                    visible()
+                })
+                let bar = document.createElement("div")
+                bar.setAttribute("id","bar")
+                let button_div = document.createElement("div")
+                button_div.setAttribute("id", "button_div")
+                button_div.append(save_to_later,bar,remove)
+                left.append(image,button_div)
+                image.addEventListener("click",function(){
+                    localStorage.setItem("product",JSON.stringify(elem))
+                    window.location.href = "prodetail.html"
+                })
+
+
+                let right = document.createElement("div")
+                right.setAttribute("id", "right")
+                let title = document.createElement("h3")
+                title.innerText = elem.title
+                title.setAttribute("id", "title")
+                title.addEventListener("click",function(){
+                    localStorage.setItem("product",JSON.stringify(elem))
+                    window.location.href = "prodetail.html"
+                })
+                let last= document.createElement("h4")
+                let last1= document.createElement("p")
+                last.innerText = "In Stock & Ready to Ship"
+                last1.innerText = "Enter Postal Code for a better delivery estimate."
+
+                let mainPrice= document.createElement("div")
+                mainPrice.setAttribute("id", "mainPrice")
+                let productPrice= document.createElement("div")
+                productPrice.setAttribute("id", "productPrice")
+                let price = document.createElement("p")
+                price.innerText = `$${elem.price}`
+                productPrice.append(price)
+
+                let price_div = document.createElement("div")
+                price_div.setAttribute("id", "price_div")
+                let inputdiv= document.createElement("div")
+                inputdiv.setAttribute("id", "inputdiv")
+                let input= document.createElement("input")
+                let quantity = elem.qty
+
+
+                let update = document.createElement("button")
+                update.innerText = "Update"
+                update.addEventListener("click",function(){
+                quantity= input.value
+                value= elem.price * quantity
+                totalPrice.innerText = `$${value}`
+                itemTotalPrice.innerText = "Item Total"
+                console.log(index)
+                data[index].qty = quantity
+                localStorage.setItem("collection",JSON.stringify(data))
+                total()
+                })
+
+
+                let br = document.createElement("br")
+                inputdiv.append(input,br,update)
+                let totalPrice = document.createElement("p")
+                let value= elem.price * quantity
+                let totalPriceDiv = document.createElement("div")
+                let itemTotalPrice = document.createElement("p")
+                itemTotalPrice.innerText = "Item Total"
+                total()
+                function total(){
+                    let totalvalue= data.reduce(function(acc,elem){
+                    return (acc+ elem.price*elem.qty)
+                },0)
+                localStorage.setItem("totalPrice",JSON.stringify(totalvalue))
+                }
+                totalPrice.innerText = `$${value}`
+                totalPriceDiv.append(itemTotalPrice,totalPrice)
+
+                price_div.append(inputdiv,totalPriceDiv)
+                mainPrice.append(productPrice,price_div)
+                right.append(title,mainPrice,last,last1)
+                div.append(left,right)
+                cartContainer.append(div)
+            })
+        }
+
+</script>

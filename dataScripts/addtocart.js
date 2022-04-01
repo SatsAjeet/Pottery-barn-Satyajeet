@@ -7,6 +7,7 @@ console.log(arrboth);
 
 arrboth.map(function(ele){
     document.querySelector("#center").innerHTML="";
+
     document.querySelector("#right").innerHTML=null;
     let div=document.createElement("div");
     
@@ -21,6 +22,12 @@ arrboth.map(function(ele){
 
     let price=document.createElement("p");
     price.innerText=ele.price;
+
+    
+    div.append(img,name,price);
+
+    document.querySelector("#center").append(div);
+})
 
     let btn=document.createElement("button");
     btn.setAttribute("id",'btn1')

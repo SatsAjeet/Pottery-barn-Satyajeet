@@ -1,5 +1,6 @@
 const data = [
     {
+        qty: 1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0005/abbott-indoor-outdoor-concrete-fsc-acacia-rectangular-coff-o.jpg",
         title: "Abbott Indoor/Outdoor Concrete & FSC® Acacia Rectangular Coffee Table",
         price: 1799,
@@ -11,6 +12,8 @@ const data = [
         }
     },
     {
+
+        qty: 1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1135/sloan-concrete-round-nesting-coffee-tables-o.jpg",
         title: "Sloan Concrete Round Nesting Coffee Tables",
         price: 2999,
@@ -22,6 +25,7 @@ const data = [
         }
     },
     {
+        qty: 1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1219/abbott-indoor-outdoor-concrete-fsc-acacia-side-table-o.jpg",
         title: "Abbott Indoor/Outdoor Concrete & FSC® Acacia Side Table",
         price: 1399,
@@ -33,6 +37,7 @@ const data = [
         }
     },
     {
+        qty: 1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1220/frog-drum-indoor-outdoor-metal-side-table-o.jpg",
         title: "Frog Drum Indoor/Outdoor Metal Side Table",
         price: 1099,
@@ -45,13 +50,16 @@ const data = [
     },
 ]
 
-console.log("data",data);
 
 localStorage.setItem("view",JSON.stringify(data));
 
 
 const data2=[ 
+    
+{
+    qty: 1,
     {
+
     image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1110/terrazzo-15-round-side-table-o.jpg",
     title: "Terrazzo 15: Round Side Table",
     price: 1329,
@@ -63,6 +71,9 @@ const data2=[
     }
 },
 {
+
+    qty: 1,
+
     image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202148/0645/malibu-metal-rectangular-coffee-table-with-nesting-stools-3-o.jpg",
     title: "Malibu Metal Rectangular Coffee Table with Nesting Stools",
     price: 1379,
@@ -73,7 +84,8 @@ const data2=[
         point3: "Cover furniture with outdoor covers (sold separately) when left outside during inclement weather or when not in use."
     }
 },
-{
+  {
+    qty: 1,
     image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0140/avila-stamped-accent-table-1-o.jpg",
     title: "Avila Stamped Accent Table",
     price: 1299,
@@ -85,6 +97,8 @@ const data2=[
     }
 },
 {
+
+    qty: 1,
     image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202212/0074/malibu-18-metal-stackable-side-stool-set-of-2-black-1-o.jpg",
     title: "Malibu 18 Metal Stackable Side Stool, Set of 2, Black",
     price: 1799,
@@ -97,6 +111,5 @@ const data2=[
 },
 ]
 
-console.log("data2",data2);
 
 localStorage.setItem("collection",JSON.stringify(data2));
