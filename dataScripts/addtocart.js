@@ -45,5 +45,5 @@ function cartItem(ele){
 
     cart.push(ele);
     localStorage.setItem("cart_data",JSON.stringify(cart));
-    window.location.href="cart.html";
+    window.location.href="./Pages/cart.html";
 }
