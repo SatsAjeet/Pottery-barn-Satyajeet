@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>OTP page</title>
+    <style>
+      * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Poppins;
+  }
+  
+  body {
+    background-image: linear-gradient(to right, rgb(98, 127, 225) , rgb(144, 244, 167));
+    
+  }
+  
+  #container {
+    width: 500px;
+    height: 450px;
+    background-color: rgb(167, 224, 237);
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid green;
+    
+  }
+  #remain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    color: red;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(134, 4, 4, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+  }
+  #phone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  h4 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: rgb(152, 135, 231);
+  }
+  input {
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    width: 75%;
+    height: 45px;
+    background-color: rgb(233, 233, 233);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding-left: 10px;
+  }
+  
+  #checkbox {
+    max-width: 13px;
+    margin: 0%;
+  }
+  
+  #submit {
+    background-color: rgb(43, 178, 72);
+    text-align: center;
+    padding: 0px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+  
+  #remember {
+    width: 75%;
+    height: 45px;
+    margin: auto;
+    display: flex;
+    border-radius: 3px;
+  }
+  
+  span {
+    margin: 13px 0px 0px 7px;
+    font-size: 13px;
+    color: gray;
+  }
+  
+.code{
+    display: inline;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(248, 248, 248);
+      margin: 4px 6px; 
+      border: 1px solid rgb(224, 224, 224);
+    
+}
+
+@media (max-width: 391px) {
+    #outer-container {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color: yellow; */
+      margin:  auto;
+      padding: 10px;
+    }
+
+   
+}
+    </style>
+  </head>
+  <body>
+
+    <div id="outer-container">
+
+      
+      <div id="container">
+        <h4>Please enter the one time password to make your payment.</h4>
+        <div id="phone"></div>
+        
+        <form id="form">
+          <input type="tel" class="code" id="code1" >
+          <input type="tel" class="code" id="code2" >
+          <input type="tel" class="code" id="code3" >
+          <input type="tel" class="code" id="code4" >
+          <input type="submit" value="Validate OTP" id="submit" />
+        </form>
+        <div id="remain"></div>
+      </div>
+    </div>
+  </body>
+  <script src="../Pages/otp.js" ></script>
+</html>
+
+<!-- <script src="/Script/signup.js"></script> -->

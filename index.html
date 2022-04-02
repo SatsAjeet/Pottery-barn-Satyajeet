@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <!-- Include the CSS styling File for Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="../Styles/footer.css">
 <link rel="stylesheet" href="/Styles/slider.css">
     <link rel="stylesheet" href="/Styles/index.css" />
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../dataScripts/home/home.css">
   </head>
   <body>
     <!-- Gyan Header Section  -->
@@ -50,6 +51,16 @@
 <div><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/024.jpg" alt=""></div>
 </div>
 
+<!-- slider -->
+<div class="carousel"  data-flickity='{ "groupCells": true }'>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/008.jpg" alt=""></div>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/004.jpg" alt=""></div>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/007.jpg" alt=""></div>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/010.jpg" alt=""></div>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/005.jpg" alt=""></div>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/003.jpg" alt=""></div>
+  <div class="carousel-cell"><img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/ecm/202209/1386/001/002.jpg" alt=""></div>
+</div>
 <!-- divya -->
 <div id="arriveimg"></div> 
 
@@ -78,6 +89,7 @@
    <div id="two"></div>
 <div id="seven"></div>
    <div id="five"></div>
+   
    <div id="footer"></div>
     </body>
 </html>
@@ -86,13 +98,9 @@
     document.querySelector("#navbar").innerHTML = navbar()
     import footer from "../Pages/components/footer.js"
     document.querySelector("#footer").innerHTML = footer()
-
 </script>
-<script src="home.js"></script>
-    <script type="module">
-      import navbar from "./components/navbar.js"
-      console.log(navbar)
-      let nav =document.getElementById("header")
-      nav.innerHTML=navbar()
-    </script>
+<script src="../dataScripts/home/home.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    
 

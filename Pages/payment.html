@@ -53,43 +53,164 @@
             height:800px;
         }
         #container{
-            width: 60%;
+            width: 50%;
             margin: 10px auto;
             display: flex;
             justify-content: space-between;
         }
         #payment{
-            width: 73%;
-            background-color: rgb(218, 218, 218);
+            width: 65%;
         }
+        #reward1{
+            display: none;
+        }
+
+
+    .popup{
+background-image: linear-gradient(to right, rgb(98, 127, 225) , rgb(144, 244, 167));
+width: 420px;
+padding: 30px 40px;
+position: absolute;
+transform: translate(-50%,-50%);
+left: 50%;
+top: 50%;
+border-radius: 15px;
+font-family: "Poppins",sans-serif;
+display: none; 
+text-align: center;
+}
+#close{
+display: block;
+margin:  0 0 30px auto;
+background-color: transparent;
+font-size: 30px;
+color: #ffffff;
+background: royalblue;
+border-radius: 100%;
+width: 40px;
+height: 40px;
+border: none;
+outline: none;
+cursor: pointer;
+}
+.popup>h2{
+margin-top: -20px;
+}
+.popup>p{
+font-size: 14px;
+text-align: center;
+margin: 20px 0;
+line-height: 25px;
+}
+#popupLogin{
+display: block;
+width: 150px;
+position: relative;
+margin: 10px auto;
+text-align: center;
+background-color: #0f72e5;
+border-radius: 20px;
+color: #ffffff;
+text-decoration: none;
+padding: 8px 0;
+}
+#discountInput{
+    height: 30px;
+    border-radius: 20px;
+    width: 200px;
+}
+
+input{
+    width: 99%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+#shipping,#cardDetails{
+    width: 100%;
+    margin: 10px auto;
+    border: 1px solid rgb(210, 210, 210);
+    padding: 20px;
+}
+#cardDetails{
+    display: none;
+}
+.flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.flex>input{
+    width: 150px;
+    
+}
+.button{
+    display: flex;
+    justify-content:center;
+}
+.button>input{
+    width: 200px;
+    color: white;
+    height: 40px;
+    background-color:#990000;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
     <div id="navbar"></div>
     <div id="container">
-        <div id="payment"></div>
+        <div id="payment">
+            <h3>1. Shipping</h3>
+            <div id="shipping">
+                <form id="form1">
+                    <h4>Shipping Address</h4>
+                    <input Required type="text" placeholder="Full Name" id="name"><br>
+                    <input Required type="text" placeholder="Address" id="addr"><br>
+                    <input type="text" placeholder="Apt,Suite,Building (Optional)"><br>
+                    <div class="flex">
+                        <input Required type="text" placeholder="City">
+                        <input Required type="text" Placeholder="State">
+                        <input Required type="number" placeholder="Zip" id="zip">
+                    </div>
+                    <input Required type="number" placeholder="Phone"><br>
+                    <div class="button"><input type="submit"  value="Continue" id="continue"></div>
+                </form>
+                
+            </div>
+            <h3>2. Payment Details</h3>
+            <div id="cardDetails">
+                <form>
+                    <input Required type="number" placeholder="Enter Card Number" id="cardno">
+                    <input Required type="text" placeholder="Enter Card Holder Name" id="cardname">
+                    <input Required type="number" placeholder="Enter CVV" id="cvv">
+                    <input Required type="date" placeholder="Enter Expiry Date" id="date">
+                    <div class="button"><input value="Make Payment" type="submit" id="MakePayment"></div>
+                </form>
+                
+            </div>
+        </div>
         <div id="orderSummary">
         <h3>Order Summary</h3>
         <div id="subTotal"></div>
         <p>Total does not include shipping, gift wrap, discounts & tax.</p>
         <h5></h5>
-        <h5 id="discount">EARN 10% BACK IN REWARDS</h5>
+        <h5 id="discount">EARN 30% BACK IN REWARDS</h5>
         <p>during your first 30 days as a cardmember2, or get 12-month special financing on purchases of $750+.3 Learn More</p>
-        <div id="visa"><input type="radio">
-        <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202203/0031/images/shoppingcart/order-summary/Visa_Inc._logo.svg" alt="">
-    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/mastercard.svg" alt="">
-    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/amex.svg" alt="">
-    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/discover.svg" alt="">
+        <h4>Click On The Banner To Get Discount</h4>
+        <img src="https://s3u.tmimgcdn.com/u2360088/629e2d55ed438445018db18675cc471b.jpg" alt="" style="width: 100%; cursor: pointer" id="reward">
+        <img src="https://assets-global.website-files.com/5e16fd99ef00e72f286ce1bc/5f314a917d8a082710e8fa4c_applied-logo-website-18pt.svg" alt="" style="width: 100%; cursor: pointer" id="reward1">
+        <p>Rewards earnings are subject to the Gold Key Rewards Terms and Credit Card Terms in the Customer Agreement.3 New customers earn an additional 5% back in rewards (30% back total) for purchases made at Williams-Sonoma, Inc. brands during the first 30 days from account opening.For Important Rate, Fee, and other Cost information select Terms and Conditions.Credit card offers are subject to credit approval.Pottery Barn Accounts are issued by Capital One.</p>
     </div>
-        <div id="paypal"><input type="radio">
-        <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202214/0001/images/shoppingcart/order-summary/PayPal_logo.svg" alt=""></div>
-        <div id="longbar"></div>
-        <p>By continuing with your purchase you agree to our terms and conditions and privacy policy.</p>
-        <button id="checkout">CHECKOUT</button>
-        <p>Our Shopping cart reflects each item's most recent price. Price and availability is subject to change.</p>
-        <p>As low as $73/month or 0% APR with Affirm. Learn more</p>
+    </div>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h2>Enjoying Shopping With Us!!!!!</h2>
+        <h3>Get 30% Instant Discount</h3>
+        <p>Please enter a Valid Coupon</p>
+        <input Required type="text" id="discountInput">
+        <button id="popupLogin">Apply</button>
 
-    </div>
     </div>
 </body>
 </html>
@@ -98,12 +219,74 @@
     document.querySelector("#navbar").innerHTML = navbar()
 </script>
 <script>
+    let backup = JSON.parse(localStorage.getItem("totalPrice"))
+    view(backup)
+    function view(backup){
     let data= JSON.parse(localStorage.getItem("collection")) || []
     let totalPrice_summary= document.getElementById("subTotal")
+    totalPrice_summary.innerHTML=null
     let totalSum = JSON.parse(localStorage.getItem("totalPrice"))
     let one= document.createElement("div")
     let two = document.createElement("h4")
     one.innerHTML =`Total(${data.length} Items)`
     two.innerHTML = `$${totalSum}`
     totalPrice_summary.append(one,two) 
+    localStorage.setItem("totalPrice",JSON.stringify(backup))
+    }
+    // discount script
+    let reward= document.getElementById("reward")
+    reward.addEventListener("click",()=>{
+            document.querySelector(".popup").style.display = "block";
+            document.querySelector(".popup").style.opacity = "1"
+            document.querySelector(".popup").style.boxShadow = "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px";
+
+document.querySelector("#close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+});
+
+document.querySelector("#popupLogin").addEventListener("click", ()=>{
+let discountInput= document.getElementById("discountInput").value
+if(discountInput == "masai30")
+{
+    let totalSum1 = JSON.parse(localStorage.getItem("totalPrice"))
+    let backup = JSON.parse(localStorage.getItem("totalPrice"))
+    localStorage.setItem("totalPrice",JSON.stringify(Math.floor(totalSum1*0.7)))
+
+    view(backup)
+    document.querySelector(".popup").style.display = "none";
+    document.querySelector("#reward").style.display = "none";
+    document.querySelector("#reward1").style.display = "flex";
+}
+})
+
+    })
+    
+    document.querySelector("#continue").addEventListener("click",function(event){
+        event.preventDefault();
+        console.log("hello")
+        let zip = document.querySelector("#zip").value;
+        let name = document.querySelector("#name").value;
+        let add = document.querySelector("#addr").value;
+        if(zip=="" || name=="" || add==""){
+            alert("Please fill all data")
+        }
+        else{
+        let adress= document.querySelector("#shipping")
+        adress.style = "display: none"
+        let payment= document.querySelector("#cardDetails")
+        payment.style = "display: block"}
+    })
+    document.querySelector("#MakePayment").addEventListener("click",function(event){
+        event.preventDefault();
+        let cardno = document.querySelector("#cardno").value;
+        let cardname = document.querySelector("#cardname").value;
+        let cvv = document.querySelector("#cvv").value;
+        let date = document.querySelector("#date").value;
+        if(cvv=="" || date=="" || cardno=="" || cardname==""){
+            alert("Please fill all data")
+        }
+        else{
+            window.location.href= "../Pages/otp.html"
+        }
+    })
 </script>

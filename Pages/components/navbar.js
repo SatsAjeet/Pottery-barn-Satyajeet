@@ -23,13 +23,13 @@ function navbar(){
         <div id="navbar1">
             <div class="navbar-1"> <input type="text" id="search-field" name="words" placeholder="Search" value="" maxlength="100" autocorrect="off" autocomplete="off"/><span><i class="fa fa-search" style="font-size:15px;padding-top: 15px;margin-right: 30px;color: gray;"></i></span></div>
            
-            <div class="navbar-1" style="padding-bottom: 50px;"><img  style="width: 100%; height: 28px; color: black;" src="https://www.potterybarn.com/netstorage/images/logo_pb.gif" alt=""></div>
+            <div class="navbar-1" style="padding-bottom: 50px;"><a id="a" href="/index.html"><img  style="width: 100%; height: 28px; color: black;" src="https://www.potterybarn.com/netstorage/images/logo_pb.gif" alt=""></a></div>
             <!-- <p>POTTERYBARN</p> -->
             <div class="navbar-1">
-                <div>
+                <a id="a" href="../Pages/Authentication.html"><div>
                     <i class="fa fa-user" style="font-size:15px;padding-left: 20px;"></i></li>
                     <li style="font-size: smaller;">My Account</li>
-                </div>
+                </div></a>
                 <div>
                     <i class="fa fa-envelope" style="font-size:15px;padding-left: 35px;"></i></li>
                     <li style="font-size: smaller;">Wedding Registry</li>
@@ -38,10 +38,10 @@ function navbar(){
                     <i class="material-icons" style="font-size:15px;padding-left: 18px;">favorite</i></li>
                     <li style="font-size: smaller;">Favorites</li>
                 </div>
-                <div>
+                <div><a id="a" href="../Pages/cart.html">
                     <i class="fa fa-shopping-cart" style="font-size:15px;padding-left: 20px;"></i></li>
                     <li style="font-size: smaller; padding-left: 15px;">Cart</li>
-                </div>
+                </a></div>
             </div>
         </div>
        
@@ -111,7 +111,7 @@ function navbar(){
         </div>
     </div>
         <div id="third-nav" class="mega_menu2">
-            <div>Furniture</div>
+            <a id="a" href="../shopping_page/shopping.html"><div id="anchor">Bedding</div></a>
            
                 <div class="sub_menu2">
                    
@@ -156,25 +156,25 @@ function navbar(){
                 </div>
     
                 
-            <div><span>Outdoor & Garden</span></div>
-            <div>Bedding</div>
-            <div>Bath</div>
-            <div>Lighting</div>
-            <div>Rugs</div>
-            <div>Windows</div>
-            <div>Pillows & Decor</div>
-            <div>Mirrors & Arts</div>
-            <div>Tabletop & Bar</div>
-            <div>Storage</div>
-            <div>Ester</div>
-            <div>Gifts</div>
-            <div>Sale</div>
+            <a id="a" href="../shopping_page/furniture.html"><div id="anchor"><span>Outdoor & Garden</span></div></a>
+            <a id="a" href="../shopping_page/furniture.html"><div id="anchor">Furniture</div></a>
+            <div id="anchor">Bath</div>
+            <div id="anchor">Lighting</div>
+            <a id="a" href="../shopping_page/shopping.html"><div id="anchor">Rugs</div></a>
+            <a id="a" href="../shopping_page/furniture.html"><div id="anchor">Windows</div></a>
+            <a id="a" href="../shopping_page/shopping.html"><div id="anchor">Pillows & Decor</div></a>
+            <div id="anchor">Mirrors & Arts</div>
+            <a id="a" href="../shopping_page/furniture.html"><div id="anchor">Tabletop & Bar</div></a>
+            <div id="anchor">Storage</div>
+            <div id="anchor">Ester</div>
+            <div id="anchor">Gifts</div>
+            <div id="anchor">Sale</div>
         </div>
         <div id="forth-nav">
             <div class="forth-nav-class"><h6>ENDS TOMORROW</h6>
             <P>SPRING WAREHOUSE EVENT</P></div>
             <div class="forth-nav-class" style="letter-spacing: 1px;"><h6>Up to 60% off Furniture, Bedding, Decor & More</h6>
                <button id="btn">SHOP NOW</button></div>`
-
+    
 }
 export default navbar;

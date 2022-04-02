@@ -1,5 +1,5 @@
 /* font-family: 'Open Sans', sans-serif; */
-body{
+#body{
     padding-left: 40px;
     padding-top: 20px;
     padding-right: 40px;
@@ -14,9 +14,9 @@ body{
     display: flex;
     gap: 10px;
 }
-h2{ 
+/* h2{ 
     font-size: 32px;
-}
+} */
 button{
     height: 38px;
     width: 129px;
@@ -67,7 +67,7 @@ select{
 select::after{
     top: 0;
     right: 0;
-    padding: 0 1em
+    padding: 0 1em;
     background: grey;
 }
 .desc{

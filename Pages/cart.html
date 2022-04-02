@@ -39,10 +39,11 @@
             margin: 20px auto;
             display: flex;
             justify-content: space-between;
+            align-items: start;
         }
         #cartContainer{
             width: 73%;
-            margin: auto;
+            margin: 10px auto;
             background-color: #f8f8f8;
         }
         #orderSummary{
@@ -211,9 +212,9 @@
 </body>
 </html>
 <script type="module">
-    import navbar from "./components/navbar.js"
+    import navbar from "../Pages/components/navbar.js"
     document.querySelector("#navbar").innerHTML = navbar()
-    import footer from "./components/footer.js"
+    import footer from "../Pages/components/footer.js"
     document.querySelector("#footer").innerHTML = footer()
     visible()
 </script>
@@ -247,14 +248,9 @@
                 remove.innerText = "Remove"
                 remove.addEventListener("click",function(){
                     data.splice(index,1)
-                    if(data==[""])
-                    {
-                        console.log("hello")
-                    }
-
                     localStorage.setItem("cart_data",JSON.stringify(data))
                     visible()
-                    totalsum()
+                    total()
                 })
                 let bar = document.createElement("div")
                 bar.setAttribute("id","bar")
@@ -295,6 +291,7 @@
                 let inputdiv= document.createElement("div")
                 inputdiv.setAttribute("id", "inputdiv")
                 let input= document.createElement("input")
+                input.placeholder = elem.qty
                 let quantity = elem.qty
 
 
@@ -308,7 +305,6 @@
                 data[index].qty = quantity
                 localStorage.setItem("cart_data",JSON.stringify(data))
                 total()
-                totalsum()
                 })
 
 
@@ -325,10 +321,8 @@
                     return (acc+ elem.price*elem.qty)
                 },0)
                 //console.log(data)
-                if(data==[""]){
-                    totalvalue = 0
-                }
                 localStorage.setItem("totalPrice",JSON.stringify(totalvalue))
+                totalsum(totalvalue)
                 }
                 totalPrice.innerText = `$${value}`
                 totalPriceDiv.append(itemTotalPrice,totalPrice)
@@ -341,17 +335,32 @@
             })
         }
 
-</script>
-<script>
-    totalsum()
-    function totalsum(){
+    function totalsum(totalSum){
+        console.log(totalSum)
+        let data1= JSON.parse(localStorage.getItem("cart_data")) || []
     let totalPrice_summary= document.getElementById("subTotal")
     totalPrice_summary.innerHTML= null
-    let totalSum = JSON.parse(localStorage.getItem("totalPrice"))
     let one= document.createElement("div")
     let two = document.createElement("h4")
-    one.innerHTML =`Subtotal(${data.length} Items)`
+    if(data1.length==0)
+    {
+        totalSum= 0
+    }
+    one.innerHTML =`Subtotal(${data1.length} Items)`
     two.innerHTML = `$${totalSum}`
     console.log(totalSum)
     totalPrice_summary.append(one,two) }
+
+    let checkout= document.getElementById("checkout")
+    checkout.addEventListener("click",()=>{
+        let logindata= JSON.parse(localStorage.getItem("logindata")) || []
+        if(logindata.length==0){
+            alert("Login To Continue")
+            window.location.href="../Pages/Authentication.html"
+        }
+        else{
+            window.location.href="../Pages/payment.html"
+        }
+    })
 </script>
+    
