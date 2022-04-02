@@ -220,7 +220,7 @@
 <script src="../dataScripts/prodfile.js"></script>
 <script>
     const visible = ()=>{
-        let data= JSON.parse(localStorage.getItem("collection")) || []
+        let data= JSON.parse(localStorage.getItem("collection"))
         let cartContainer = document.querySelector("#cartContainer")
         cartContainer.innerHTML = null
             let firstdata = document.createElement("div")
@@ -230,7 +230,7 @@
             let h2= document.createElement("h2")
             h2.innerText = "Shipping"
             firstdata.append(h1,h2)
-            console.log(data)
+            //console.log(data)
             cartContainer.append(firstdata)
             data.forEach((elem,index)=>{
                 let div = document.createElement("div")
@@ -246,8 +246,13 @@
                 remove.innerText = "Remove"
                 remove.addEventListener("click",function(){
                     data.splice(index,1)
+                    if(data==[""])
+                    {
+                        console.log("hello")
+                    }
                     localStorage.setItem("collection",JSON.stringify(data))
                     visible()
+                    totalsum()
                 })
                 let bar = document.createElement("div")
                 bar.setAttribute("id","bar")
@@ -301,6 +306,7 @@
                 data[index].qty = quantity
                 localStorage.setItem("collection",JSON.stringify(data))
                 total()
+                totalsum()
                 })
 
 
@@ -316,6 +322,10 @@
                     let totalvalue= data.reduce(function(acc,elem){
                     return (acc+ elem.price*elem.qty)
                 },0)
+                //console.log(data)
+                if(data==[""]){
+                    totalvalue = 0
+                }
                 localStorage.setItem("totalPrice",JSON.stringify(totalvalue))
                 }
                 totalPrice.innerText = `$${value}`
@@ -331,11 +341,15 @@
 
 </script>
 <script>
+    totalsum()
+    function totalsum(){
     let totalPrice_summary= document.getElementById("subTotal")
+    totalPrice_summary.innerHTML= null
     let totalSum = JSON.parse(localStorage.getItem("totalPrice"))
     let one= document.createElement("div")
     let two = document.createElement("h4")
     one.innerHTML =`Subtotal(${data.length} Items)`
     two.innerHTML = `$${totalSum}`
-    totalPrice_summary.append(one,two) 
+    console.log(totalSum)
+    totalPrice_summary.append(one,two) }
 </script>

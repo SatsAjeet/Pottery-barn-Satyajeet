@@ -56,10 +56,10 @@ localStorage.setItem("view",JSON.stringify(data));
 
 const data2=[ 
     
-{
-    qty: 1,
-    {
 
+    
+    {
+    qty: 1,
     image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1110/terrazzo-15-round-side-table-o.jpg",
     title: "Terrazzo 15: Round Side Table",
     price: 1329,
