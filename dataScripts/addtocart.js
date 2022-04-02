@@ -7,7 +7,6 @@ console.log(arrboth);
 
 arrboth.map(function(ele){
     document.querySelector("#center").innerHTML="";
-
     document.querySelector("#right").innerHTML=null;
     let div=document.createElement("div");
     
@@ -24,11 +23,6 @@ arrboth.map(function(ele){
     price.innerText=ele.price;
 
     
-    div.append(img,name,price);
-
-    document.querySelector("#center").append(div);
-})
-
     let btn=document.createElement("button");
     btn.setAttribute("id",'btn1')
     btn.innerText="ADD TO CART";
@@ -52,5 +46,5 @@ function cartItem(ele){
 
     cart.push(ele);
     localStorage.setItem("cart_data",JSON.stringify(cart));
-    window.location.href="cart.html";
+    window.location.href="./Pages/cart.html";
 }

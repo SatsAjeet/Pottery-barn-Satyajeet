@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Styles/prodetail.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
+    <link rel="stylesheet" href="./Styles/navbar.css">
+    <link rel="stylesheet" href="./Styles/index.css">
+    
 </head>
 <body>
-    <div id="top">
+    <div id="header"></div>
+    <div id="toper">
         <a href="">FREE SHIPPING ON 1000s OF ITEMS
             <br>
             SHOP NOW ></a>
@@ -55,10 +60,7 @@
            <p> FREE IN-STORE OR CURBSIDE PICKUP
             This item is not available for free store pickup.</p>
     </div>
-    <button id="btn1">ADD TO CART</button>
-    <button class="btn2">MAKE A FREE DESIGN APPOINTMENT</button>
-    <button class="btn2"> ADD TO REGISTRY</button>
-
+    
         </div>
        
     </div>
@@ -71,10 +73,8 @@
 <p>SHIPPING & RETURNS</p>
     </div>
     <div id="para"><p>Sturdy and exuding industrial style, Fallon is marked by the contrast between its heavy metal fixtures and their delicate-looking construction. A lean metal cage forms an airy architecture in our chandelier, an innovative take on the traditional lantern that combines organic curves and seamless joins. The fixture’s hand-forged finish adds depth and dimension.</p></div>
-    <h3>PRODUCT DETAILS</h3>
-<div id="product_details"></div>
-<h3>DIMENSIONS</h3>
-<div id="dimensions"></div>
+    
+
 <h3> GOOD FOR PEOPLE, GOOD FOR THE PLANET </h3>
 
 <div id="two">
@@ -91,8 +91,7 @@
 </div>
 <h3>ALSO IN THIS COLLECTION</h3>
 <div id="coll"></div>
-<h3>YOU MAY ALSO NEED</h3>
-<div id="need"></div>
+
 <h3>PEOPLE ALSO VIEWED
 </h3>
 <div id="view"></div>
@@ -139,8 +138,27 @@
 <div id="last">
     <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202150/0002/images/pip/design-services-banner-bottom.jpg" alt="last">
 </div>
+<div id="footer"></div>
 </body>
 </html>
+<script type="module">
+    import navbar from "../Pages/components/navbar.js"
 
-<script src="./dataScripts/addtocart.js"></script>
+    //console.log(navbar);
+
+    let top=document.getElementById("header");
+    top.innerHTML =navbar();
+</script>
 <script src="./dataScripts/prodfile.js"></script>
+<script src="./dataScripts/addtocart.js"></script>
+<script type=module>
+
+    import footer from "../Pages/components/footer.js";
+
+    //console.log("footer",footer)
+
+    let down=document.getElementById("footer");
+    down.innerHTML = footer();
+</script>
+
+

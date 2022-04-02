@@ -220,7 +220,8 @@
 <script src="../dataScripts/prodfile.js"></script>
 <script>
     const visible = ()=>{
-        let data= JSON.parse(localStorage.getItem("collection"))
+        let data= JSON.parse(localStorage.getItem("cart_data")) || []
+
         let cartContainer = document.querySelector("#cartContainer")
         cartContainer.innerHTML = null
             let firstdata = document.createElement("div")
@@ -250,7 +251,8 @@
                     {
                         console.log("hello")
                     }
-                    localStorage.setItem("collection",JSON.stringify(data))
+
+                    localStorage.setItem("cart_data",JSON.stringify(data))
                     visible()
                     totalsum()
                 })
@@ -304,7 +306,7 @@
                 totalPrice.innerText = `$${value}`
                 itemTotalPrice.innerText = "Item Total"
                 data[index].qty = quantity
-                localStorage.setItem("collection",JSON.stringify(data))
+                localStorage.setItem("cart_data",JSON.stringify(data))
                 total()
                 totalsum()
                 })
