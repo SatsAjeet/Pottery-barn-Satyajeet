@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/navbar.css">
@@ -34,20 +35,20 @@
             margin: auto;
         }
         #container{
-            width: 73%;
+            width: 65%;
             margin: 20px auto;
             display: flex;
             justify-content: space-between;
+            align-items: start;
         }
         #cartContainer{
             width: 73%;
-            margin: auto;
+            margin: 10px auto;
             background-color: #f8f8f8;
         }
         #orderSummary{
             width: 25%;
             height:800px;
-            background-color: rgb(212, 212, 212);
         }
         .productdiv{
             display: flex;
@@ -59,6 +60,7 @@
             border: 1px solid rgb(185, 185, 185);
         }
         .productdiv>div>img{
+            width: 90%;
             height: 60%;
             margin: 20px;
             cursor: pointer;
@@ -130,6 +132,53 @@
             justify-content:center;
             align-content: center;
         }
+        #orderSummary p{
+            font-size: 14px;
+        }
+        #longbar{
+            width: 100%;
+            background-color:rgb(120, 120, 120);
+            height: 1px;
+            margin: 10px auto;
+        }
+        #checkout{
+            width: 100%;
+            height: 40px;
+            color: white;
+            background-color: #990000;
+            border: 0px solid;
+            margin: 10px auto;
+        }
+        #discount{
+            margin-bottom: 2px;
+            text-align: left;
+            font-size: 16px;
+        }
+        #discount~p{
+            margin-top: 2px;
+            
+        }
+        #subTotal{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #visa,#paypal{
+            margin-bottom: 10px;
+            background-color: rgb(228, 228, 228);
+            height: 35px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        @media all and (min-width:200px) and (max-width:420px) {
+            #adv{
+                display: none;
+            }
+            #container{
+                display: block;
+            }
+        }
     </style>
     <script src="../dataScripts/prodata.js"></script>
 </head>
@@ -142,8 +191,21 @@
         <div id="subTotal"></div>
         <p>Total does not include shipping, gift wrap, discounts & tax.</p>
         <h5></h5>
+        <h5 id="discount">EARN 10% BACK IN REWARDS</h5>
         <p>during your first 30 days as a cardmember2, or get 12-month special financing on purchases of $750+.3 Learn More</p>
-        <input type="radio">
+        <div id="visa"><input type="radio">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202203/0031/images/shoppingcart/order-summary/Visa_Inc._logo.svg" alt="">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/mastercard.svg" alt="">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/amex.svg" alt="">
+    <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202204/0006/images/shoppingcart/order-summary/discover.svg" alt="">
+    </div>
+        <div id="paypal"><input type="radio">
+        <img src="https://assets.pbimgs.com/pbimgs/ab/images/i/202214/0001/images/shoppingcart/order-summary/PayPal_logo.svg" alt=""></div>
+        <div id="longbar"></div>
+        <p>By continuing with your purchase you agree to our terms and conditions and privacy policy.</p>
+        <button id="checkout">CHECKOUT</button>
+        <p>Our Shopping cart reflects each item's most recent price. Price and availability is subject to change.</p>
+        <p>As low as $73/month or 0% APR with Affirm. Learn more</p>
 
     </div>
     </div>
@@ -159,9 +221,9 @@
 </body>
 </html>
 <script type="module">
-    import navbar from "./components/navbar.js"
+    import navbar from "../Pages/components/navbar.js"
     document.querySelector("#navbar").innerHTML = navbar()
-    import footer from "./components/footer.js"
+    import footer from "../Pages/components/footer.js"
     document.querySelector("#footer").innerHTML = footer()
     visible()
 </script>
@@ -169,6 +231,7 @@
 <script>
     const visible = ()=>{
         let data= JSON.parse(localStorage.getItem("cart_data")) || []
+
         let cartContainer = document.querySelector("#cartContainer")
         cartContainer.innerHTML = null
             let firstdata = document.createElement("div")
@@ -178,7 +241,7 @@
             let h2= document.createElement("h2")
             h2.innerText = "Shipping"
             firstdata.append(h1,h2)
-            console.log(data)
+            //console.log(data)
             cartContainer.append(firstdata)
             data.forEach((elem,index)=>{
                 let div = document.createElement("div")
@@ -193,10 +256,14 @@
                 let remove = document.createElement("button")
                 remove.innerText = "Remove"
                 remove.addEventListener("click",function(){
+                    remove1()
+                })
+                const remove1 = ()=>{
                     data.splice(index,1)
                     localStorage.setItem("cart_data",JSON.stringify(data))
                     visible()
-                })
+                    total()
+                }
                 let bar = document.createElement("div")
                 bar.setAttribute("id","bar")
                 let button_div = document.createElement("div")
@@ -236,6 +303,7 @@
                 let inputdiv= document.createElement("div")
                 inputdiv.setAttribute("id", "inputdiv")
                 let input= document.createElement("input")
+                input.placeholder = elem.qty
                 let quantity = elem.qty
 
 
@@ -243,13 +311,18 @@
                 update.innerText = "Update"
                 update.addEventListener("click",function(){
                 quantity= input.value
+                if(quantity==0)
+                {
+                    remove1()
+                }
+                else{
                 value= elem.price * quantity
                 totalPrice.innerText = `$${value}`
                 itemTotalPrice.innerText = "Item Total"
-                console.log(index)
                 data[index].qty = quantity
                 localStorage.setItem("cart_data",JSON.stringify(data))
                 total()
+                }
                 })
 
 
@@ -265,7 +338,9 @@
                     let totalvalue= data.reduce(function(acc,elem){
                     return (acc+ elem.price*elem.qty)
                 },0)
+                //console.log(data)
                 localStorage.setItem("totalPrice",JSON.stringify(totalvalue))
+                totalsum(totalvalue)
                 }
                 totalPrice.innerText = `$${value}`
                 totalPriceDiv.append(itemTotalPrice,totalPrice)
@@ -278,4 +353,32 @@
             })
         }
 
+    function totalsum(totalSum){
+        console.log(totalSum)
+        let data1= JSON.parse(localStorage.getItem("cart_data")) || []
+    let totalPrice_summary= document.getElementById("subTotal")
+    totalPrice_summary.innerHTML= null
+    let one= document.createElement("div")
+    let two = document.createElement("h4")
+    if(data1.length==0)
+    {
+        totalSum= 0
+    }
+    one.innerHTML =`Subtotal(${data1.length} Items)`
+    two.innerHTML = `$${totalSum}`
+    console.log(totalSum)
+    totalPrice_summary.append(one,two) }
+
+    let checkout= document.getElementById("checkout")
+    checkout.addEventListener("click",()=>{
+        let logindata= JSON.parse(localStorage.getItem("logindata")) || []
+        if(logindata.length==0){
+            alert("Login To Continue")
+            window.location.href="../Pages/Authentication.html"
+        }
+        else{
+            window.location.href="../Pages/payment.html"
+        }
+    })
 </script>
+    

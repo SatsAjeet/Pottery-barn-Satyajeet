@@ -79,7 +79,7 @@ function footer() {
 
         
     </div>
-    <div><p style="font-size: xx-small; text-align: center;">© 2022 Williams-Sonoma, Inc. All Rights Reserved|Terms & Conditions (Updated April 2020)|Accessibility|Privacy Policy (Updated January 2022)|Legal Statement</p></div>
+    <div id="lastParaFooter"><p style="font-size: xx-small; text-align: center;">© 2022 Williams-Sonoma, Inc. All Rights Reserved|Terms & Conditions (Updated April 2020)|Accessibility|Privacy Policy (Updated January 2022)|Legal Statement</p></div>
 </div>`
   }
   export default footer;

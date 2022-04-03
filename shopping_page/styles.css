@@ -1,5 +1,5 @@
 /* font-family: 'Open Sans', sans-serif; */
-body{
+#body{
     padding-left: 40px;
     padding-top: 20px;
     padding-right: 40px;
@@ -14,9 +14,9 @@ body{
     display: flex;
     gap: 10px;
 }
-h2{ 
+/* h2{ 
     font-size: 32px;
-}
+} */
 button{
     height: 38px;
     width: 129px;
@@ -24,11 +24,14 @@ button{
 }
 #layer3{
     display: flex;
-    gap: 986px;
+    justify-content: space-between;
+    
 }
 #layer3 > div{
     display: flex;
     gap: 20px;
+    align-items: center;
+    width: auto;
 }
 .img_class{
     width: 26px;
@@ -42,10 +45,14 @@ button{
 .product_img{
     width: 450px;
     height: 400px;
+    cursor: pointer;
 }
-.main_div{
+.main_divv{
     height: auto;
     width: auto;
+}
+.main_divv>p{
+    cursor: pointer;
 }
 #inner_div{
     display: grid;
@@ -63,11 +70,12 @@ select{
     width: 150px;
     height:40px;
     padding: 5px;
+    cursor: pointer;
 }
 select::after{
     top: 0;
     right: 0;
-    padding: 0 1em
+    padding: 0 1em;
     background: grey;
 }
 .desc{

@@ -5,29 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/navbar.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
 
     <style>
       .forms {
         width: 75%;
         margin: 80px auto;
-
         display: flex;
         justify-content: space-between;
       }
 
       .forms > div {
+        background-color: #e6e3de;
         width: 540px;
-        height: 460px;
+        height: auto;
         display: flex;
         flex-direction: column;
-        /* border: 1px solid black; */
-        padding: 20px;
+        padding: 25px;
+        margin: 0px 20px;
         color: #010101;
         line-height: 24px;
+        /* border: 1px solid black; */
+        /* box-shadow: ; */
+      }
+
+      .forms > div:first-child {
+        /* background-color: #990000; */
+        height: 450px;
       }
 
       .forms > div > p {
-        font-size: 18px;
+        font-size: 16px;
         width: 70%;
         letter-spacing: 0.5px;
       }
@@ -35,6 +47,18 @@
       .forms > div > form {
         display: flex;
         flex-direction: column;
+      }
+
+      .forms > div > form > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .forms > div > form > div > a {
+        /* color: orange; */
+
+        margin-right: 140px;
       }
 
       /* Styling For Form Elements */
@@ -54,7 +78,7 @@
         text-transform: uppercase;
       }
 
-      button {
+      #sign-up, #sign-in{
         width: 100px;
         height: 40px;
         align-items: flex-start;
@@ -68,21 +92,32 @@
         text-transform: uppercase;
         margin: 20px 0px;
       }
+      #sign-up{
+        width: 60%;
+      }
+      button:hover {
+        filter: brightness(200%);
+        background: rgb(22, 22, 22);
+      }
 
       .btn2 {
         width: 220px;
         height: 40px;
       }
+
       input {
-        width: 400px;
+        width: 350px;
         height: 38px;
         background-color: #ffffff;
         border-color: #cccccc;
-        border-style: solid;
+        /* border-style: solid; */
+        border: 1px solid black;
+        outline: none;
         box-shadow: #e3e3e3 0px 1px 1px 0px;
         display: inline-block;
         font-family: Arial;
         margin: 14px 0;
+        transition: all 0.3s;
       }
 
       sup {
@@ -97,7 +132,8 @@
         display: inline;
         font-family: TT-Norms-Pro;
         line-height: 24px;
-        text-transform: uppercase;
+        text-decoration: underline;
+        /* text-transform: uppercase; */
       }
 
       .required {
@@ -106,30 +142,40 @@
         line-height: 18px;
         margin: 10px 0;
       }
+
+      /* Classe for the form validation. */
+
+      input:valid {
+        border: 2px solid green;
+      }
+      input:invalid {
+        border: 1px solid red;
+      }
     </style>
   </head>
 
   <body>
+    <div id="navbar"></div>
     <!-- Forms Container -->
     <div class="forms">
-      <h3>Authentication Page</h3>
       <!-- For Log In -->
       <div>
         <h2>sign in</h2>
         <p>
-          You can now sign into any of our family of brands using your account!
-          If you don't have an account, create an account.
+          You can now sign into any of <a></a> using your account! If you don't
+          have an account, create an account.
         </p>
-        <form action="">
-          <label for="email">Email<sup>*</sup></label>
-          <input type="email" id="email" required />
+        <form id="signinForm">
+          <label for="log-email">Email<sup>*</sup></label>
+          <input type="email" id="logInemail" required />
 
-          <label for="pass">Password<sup>*</sup></label>
-          <input type="password" id="pass" required />
+          <label for="logpass">Password<sup>*</sup></label>
+          <input type="password" id="logInpass" required minlength="8" />
 
-          <button>Sign in</button>
-
-          <a href="">forget your password</a>
+          <div>
+            <button id="sign-in">Sign in</button>
+            <a href="">Forget your Password</a>
+          </div>
         </form>
       </div>
 
@@ -138,8 +184,8 @@
         <h2>create an account</h2>
         <p>
           When you open a Pottery Barn account, you'll be able to checkout
-          faster, save credit cards, and see your order history on any of our
-          family of brands.
+          faster, save credit cards, and see your order history on any of
+          <a> our family of brands. </a>
         </p>
 
         <p>
@@ -147,20 +193,47 @@
         </p>
 
         <div class="required"><sup>*</sup>Required</div>
-        <form action="">
+        <form id="signupForm">
           <label for="fname">Full Name<sup>*</sup></label>
-          <input type="text" id="fname" required />
+          <input
+            type="text"
+            id="fname"
+            required
+            placeholder="Enter Name Here"
+          />
 
           <label for="email">Email<sup>*</sup></label>
-          <input type="email" id="email" required />
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="Enter Email Here"
+            style="height:40px;margin-top:10px; width:350px"
+          />
 
-          <label for="cmail">Confirm Email<sup>*</sup></label>
-          <input type="email" id="cmail" required />
+          <label for="password1">Password</label>
+          <input
+            type="password"
+            id="password1"
+            placeholder="Create Password (Min. 8 characters)"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+          />
 
-          <label for="pass">Password<sup>*</sup></label>
-          <input type="password" id="pass" required />
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            placeholder="Confirm Password"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+            name="password"
+          />
 
-          <button class="btn2">Create an account</button>
+          <button class="btn2" id="sign-up" type="submit">
+            Create an account
+          </button>
         </form>
         <p>
           California residents: can see Financial Incentive Terms for terms and
@@ -174,8 +247,15 @@
         </p>
       </div>
     </div>
+    <div id="footer"></div>
   </body>
-
+<script type="module">
+    import navbar from "../Pages/components/navbar.js"
+    document.querySelector("#navbar").innerHTML = navbar()
+    import footer from "../Pages/components/footer.js"
+    document.querySelector("#footer").innerHTML = footer()
+</script>
+  <script src="./Authentication.js"></script>
   <!-- Components( or ES6 modules ) for working with import/export -->
 
   <script type="module">

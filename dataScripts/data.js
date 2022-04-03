@@ -1,5 +1,6 @@
 const data = [[
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0005/abbott-indoor-outdoor-concrete-fsc-acacia-rectangular-coff-o.jpg",
         title: "Abbott Indoor/Outdoor Concrete & FSC® Acacia Rectangular Coffee Table",
         price: 1799,
@@ -11,6 +12,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1135/sloan-concrete-round-nesting-coffee-tables-o.jpg",
         title: "Sloan Concrete Round Nesting Coffee Tables",
         price: 2999,
@@ -22,6 +24,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1219/abbott-indoor-outdoor-concrete-fsc-acacia-side-table-o.jpg",
         title: "Abbott Indoor/Outdoor Concrete & FSC® Acacia Side Table",
         price: 1399,
@@ -33,6 +36,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1220/frog-drum-indoor-outdoor-metal-side-table-o.jpg",
         title: "Frog Drum Indoor/Outdoor Metal Side Table",
         price: 1099,
@@ -44,6 +48,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1110/terrazzo-15-round-side-table-o.jpg",
         title: "Terrazzo 15: Round Side Table",
         price: 1329,
@@ -55,6 +60,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202148/0645/malibu-metal-rectangular-coffee-table-with-nesting-stools-3-o.jpg",
         title: "Malibu Metal Rectangular Coffee Table with Nesting Stools",
         price: 1379,
@@ -66,6 +72,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0140/avila-stamped-accent-table-1-o.jpg",
         title: "Avila Stamped Accent Table",
         price: 1299,
@@ -77,6 +84,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202212/0074/malibu-18-metal-stackable-side-stool-set-of-2-black-1-o.jpg",
         title: "Malibu 18 Metal Stackable Side Stool, Set of 2, Black",
         price: 1799,
@@ -88,6 +96,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202148/0573/indio-dims-fsc-eucalyptus-c-table-6-o.jpg",
         title: "Indio 14 FSC® Eucalyptus C- Table",
         price: 899,
@@ -99,6 +108,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0018/frog-drum-indoor-outdoor-metal-coffee-table-3-o.jpg",
         title: "Frog Drum Indoor/Outdoor Metal Coffee Table",
         price: 1899,
@@ -110,6 +120,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0025/abbott-indoor-outdoor-concrete-fsc-acacia-round-coffee-tab-o.jpg",
         title: "Abbott Indoor/Outdoor Concrete & FSC® Acacia Round Coffee Table",
         price: 789,
@@ -121,6 +132,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0040/pomona-indoor-outdoor-17-concrete-c-table-o.jpg",
         title: "Pomona Indoor/Outdoor 17 Concrete C- Table",
         price: 1299,
@@ -132,6 +144,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1080/malibu-24-fsc-teak-side-table-o.jpg",
         title: "Malibu 24 FSC® Teak Side Table",
         price: 899,
@@ -143,6 +156,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/0803/pomona-indoor-outdoor-50-concrete-fsc-acacia-coffee-table-o.jpg",
         title: "Pomona Indoor/Outdoor 50 Concrete & FSC® Acacia Coffee Table",
         price: 1399,
@@ -154,6 +168,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0003/pomona-indoor-outdoor-40-concrete-chunky-leg-coffee-table-o.jpg",
         title: "Pomona Indoor/Outdoor 40 Concrete Chunky Leg Coffee Table",
         price: 1899,
@@ -165,6 +180,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/0500/pomona-indoor-outdoor-38-concrete-fsc-acacia-round-coffee--2-o.jpg",
         title: "Pomona Indoor/Outdoor 38 Concrete & FSC® Acacia Round Coffee Table",
         price: 899,
@@ -176,6 +192,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1317/indio-metal-coffee-table-slate-o.jpg",
         title: "Indio Metal Coffee Table, Slate",
         price: 1599,
@@ -187,6 +204,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/0785/torrey-365-all-weather-wicker-coffee-table-pouf-o.jpg",
         title: "Torrey 36.5 All- Weather Wicker Coffee Table Pouf",
         price: 259,
@@ -198,6 +216,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1106/raylan-concrete-outdoor-coffee-table-o.jpg",
         title: "Raylan Concrete Outdoor Coffee Table",
         price: 209,
@@ -209,6 +228,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1278/indio-fsc-eucalyptus-side-table-o.jpg",
         title: "Indio FSC® Eucalyptus Side Table",
         price: 2099,
@@ -220,6 +240,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202206/0226/hampton-indoor-outdoor-all-weather-wicker-drum-coffee-tabl-1-o.jpg",
         title: "Hampton Indoor/Outdoor All-Weather Wicker Drum Coffee Table",
         price: 2699,
@@ -231,6 +252,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1174/abbott-indoor-outdoor-concrete-fsc-acacia-square-coffee-ta-o.jpg",
         title: "Abbott Indoor/Outdoor Concrete & FSC® Acacia Square Coffee Table",
         price: 2599,
@@ -242,6 +264,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202209/1193/indio-fsc-eucalyptus-coffee-table-o.jpg",
         title: "Indio FSC® Eucalyptus Coffee Table",
         price: 1499,
@@ -253,6 +276,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202143/0132/jayne-indoor-outdoor-marble-top-coffee-table-1-o.jpg",
         title: "Jayne Indoor/Outdoor Marble Top Coffee Table",
         price: 1699,
@@ -264,6 +288,7 @@ const data = [[
         }
     },
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202207/0022/malcolm-indoor-outdoor-60-outdoor-rectangular-coffee-table-o.jpg",
         title: "Malcolm Indoor/Outdoor 60 Outdoor Rectangular Coffee Table",
         price: 1799,
@@ -277,6 +302,7 @@ const data = [[
 ],
     [
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202150/0145/belgian-flax-linen-diamond-quilt-shams-1-c.jpg",
         title: "Belgian Flax Linen Diamond Quilt",
         price: 789,
@@ -295,6 +321,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202151/0704/belgian-flax-linen-waffle-quilt-1-c.jpg",
         title: "Belgian Flax Linen Waffle Quilt",
         price: 329,
@@ -313,6 +340,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202212/0483/casual-tencel-quilt-c.jpg",
         title: "Casual TENCEL™ Quilt",
         price: 1100,
@@ -331,6 +359,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202152/0680/belgian-flax-linen-handcrafted-quilt-c.jpg",
         title: "Belgian Flax Linen Handcrafted Quilt",
         price: 1500,
@@ -349,6 +378,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202211/0236/tencel-quilt-shams-c.jpg",
         title: "TENCEL™ Quilt",
         price: 575,
@@ -367,6 +397,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202151/0719/cloud-linen-handcrafted-quilt-shams-c.jpg",
         title: "Cloud Linen Handcrafted Quilt",
         price: 2200,
@@ -385,6 +416,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202146/0671/belgian-flax-linen-handcrafted-quilt-shams-7-c.jpg",
         title: "Belgian Flax Linen Handcrafted Quilt",
         price: 899,
@@ -403,6 +435,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202213/0008/lilo-handcrafted-cotton-shams-c.jpg",
         title: "Lilo Handcrafted Cotton Quilt",
         price: 1299,
@@ -421,6 +454,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202212/0933/delaney-patchwork-cotton-quilt-5-c.jpg",
         title: "Belgian Flax Linen Handcrafted Quilt",
         price: 2199,
@@ -439,6 +473,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202209/0756/mesa-striped-handcrafted-cotton-quilt-shams-c.jpg",
         title: "Mesa Striped Handcrafted Cotton Quilt & Shams",
         price: 499,
@@ -457,6 +492,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202149/0017/velvet-lattice-quilt-shams-c.jpg",
         title: "Velvet Lattice Quilt & Shams",
         price: 289,
@@ -475,6 +511,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202151/0749/pick-stitch-handcrafted-cotton-linen-quilt-shams-1-c.jpg",
         title: "Pick-Stitch Handcrafted Cotton/Linen Quilt",
         price: 599,
@@ -493,6 +530,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202151/0750/pick-stitch-handcrafted-cotton-linen-quilt-shams-c.jpg",
         title: "Pick-Stitch Handcrafted Cotton/Linen Quilt",
         price: 1499,
@@ -511,6 +549,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202147/0273/stonewashed-pick-stitch-quilt-shams-c.jpg",
         title: "Stonewashed Pick-Stitch Quilt & Shams",
         price: 2599,
@@ -529,6 +568,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202209/0810/velvet-lattice-quilt-shams-c.jpg",
         title: "Mesa Striped Handcrafted Cotton Quilt & Shams",
         price: 499,
@@ -546,6 +586,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202147/0954/badg-shield-tufted-quilted-sham-c.jpg",
         title: "Belgian Flax Linen Diamond Quilt",
         price: 789,
@@ -565,6 +606,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202209/0795/tessa-handcrafted-linen-cotton-patchwork-quilt-shams-c.jpg",
         title: "Belgian Flax Linen Waffle Quilt",
         price: 329,
@@ -583,6 +625,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202212/0049/soft-cotton-handcrafted-quilt-shams-c.jpg",
         title: "Pick-Stitch Handcrafted Cotton/Linen Quilt",
         price: 599,
@@ -601,6 +644,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202204/0004/belgian-flax-linen-handcrafted-basketweave-quilt-shams-c.jpg",
         title: "Mesa Striped Handcrafted Cotton Quilt & Shams",
         price: 499,
@@ -619,6 +663,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202212/0020/velvet-handcrafted-box-stitch-quilt-shams-c.jpg",
         title: "Mesa Striped Handcrafted Cotton Quilt & Shams",
         price: 499,
@@ -637,6 +682,7 @@ const data = [[
     },
 
     {
+        qty:1,
         image: "https://assets.pbimgs.com/pbimgs/rk/images/dp/wcm/202208/0014/alpine-faux-fur-quilt-shams-c.jpg",
         title: "Pick-Stitch Handcrafted Cotton/Linen Quilt",
         price: 1499,
@@ -654,4 +700,4 @@ const data = [[
     }
 ]];
 
-console.log(data[1])
+localStorage.setItem("productData",JSON.stringify(data))

@@ -86,7 +86,7 @@
     width: 100%;
     height: 30px;
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     gap: 20px;
     font-size: smaller;
     margin-top: 10px;
@@ -146,24 +146,36 @@
 
 .col2{
     
-    width: 500px; height: 300px; display: flex;
-    gap: 25px;
+    width: 900px; height: 300px; display: flex;
+    gap: 100px;
     font-size: smaller;
+    justify-content: space-evenly;
+    margin: auto;
 }
 .col2 p {
   font-size: smaller;
   font-weight: lighter;
- 
+  cursor: pointer;
 }
 .col3{
+    width: 200px;
+    height: 300px;
     gap: 30px;
+    font-size: smaller;
+    margin: auto;
 }
 .col3 p {
     font-size: smaller;
     font-weight: lighter;
+    gap: 30px;
+    cursor: pointer;
    
   }
- 
+ #anchor{
+     cursor: pointer;
+     text-decoration: underline;
+     color: black;
+ }
    #forth-nav{
        background-color: #d2d9df;
        width: 100%;
@@ -190,7 +202,24 @@
     border: 1px solid #142b44;
     margin-left: 10px;
     font-size: small;
-    width: 100px;
+    width: 200px;
     height: 25px;
     font-weight: bold;
   }
+  #a{
+      color: black;
+      text-decoration: none;
+  }
+
+@media all and (min-width:200px) and (max-width:420px) {
+    #top1,#top2,#search-field,#navbar1,#forth-nav{
+        display: none;
+    }
+    #sec-nav,#third-nav{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-bottom: 40px;
+        overflow: hidden;
+    }
+
+}
