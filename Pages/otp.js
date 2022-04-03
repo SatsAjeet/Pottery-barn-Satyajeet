@@ -2,7 +2,7 @@
     document.querySelector("#form").addEventListener("submit", takeMe);
        document.querySelector("#phone").innerHTML = "Your OTP has been sent to your registered mobile number "
 
-    alert( " <1234> is the One Time Password (OTP) for your payment on Pottery Barn. OTP is valid for next 10 minutes. Please do not share with anyone.")
+    alert( " <1234> is the One Time Password (OTP) for your payment on Pottery Barn. OTP is valid for next 1 minutes. Please do not share with anyone.")
 
 var count=3
     function takeMe(event) {
@@ -45,3 +45,22 @@ var count=3
 
         console.log(code1,code4, "Hello ")
     }
+
+setTimeout(returning, 60000)
+function returning()
+{
+    window.location.href ="../Pages/payment.html"
+}
+
+let time= document.querySelector("#time")
+function timer(seconds) {
+    var remaningTime = seconds;
+    window.setTimeout(function () {
+        time.innerHTML = null;
+        time.innerHTML = `${remaningTime} Sec`
+        if (remaningTime > 0) {
+            timer(remaningTime - 1);
+        }
+    }, 1000);
+}
+timer(60);

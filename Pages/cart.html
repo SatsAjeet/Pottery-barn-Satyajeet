@@ -60,6 +60,7 @@
             border: 1px solid rgb(185, 185, 185);
         }
         .productdiv>div>img{
+            width: 90%;
             height: 60%;
             margin: 20px;
             cursor: pointer;
@@ -170,6 +171,14 @@
             align-items: center;
             gap: 5px;
         }
+        @media all and (min-width:200px) and (max-width:420px) {
+            #adv{
+                display: none;
+            }
+            #container{
+                display: block;
+            }
+        }
     </style>
     <script src="../dataScripts/prodata.js"></script>
 </head>
@@ -247,11 +256,14 @@
                 let remove = document.createElement("button")
                 remove.innerText = "Remove"
                 remove.addEventListener("click",function(){
+                    remove1()
+                })
+                const remove1 = ()=>{
                     data.splice(index,1)
                     localStorage.setItem("cart_data",JSON.stringify(data))
                     visible()
                     total()
-                })
+                }
                 let bar = document.createElement("div")
                 bar.setAttribute("id","bar")
                 let button_div = document.createElement("div")
@@ -299,12 +311,18 @@
                 update.innerText = "Update"
                 update.addEventListener("click",function(){
                 quantity= input.value
+                if(quantity==0)
+                {
+                    remove1()
+                }
+                else{
                 value= elem.price * quantity
                 totalPrice.innerText = `$${value}`
                 itemTotalPrice.innerText = "Item Total"
                 data[index].qty = quantity
                 localStorage.setItem("cart_data",JSON.stringify(data))
                 total()
+                }
                 })
 
 

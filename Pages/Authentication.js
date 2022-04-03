@@ -1,88 +1,72 @@
+document.querySelector("#signupForm").addEventListener("submit", signUpfun)
+var credArr = JSON.parse(localStorage.getItem("credentials")) || [];
+function signUpfun(event) {
+  event.preventDefault();
+  var name = document.querySelector("#fname").value;
+  var email = document.querySelector("#email").value;
+  var pass = document.querySelector("#password1").value;
+  var cpass = document.querySelector("#password2").value;
+  if (cpass == pass)
+  {
+    var credObj = {
+      name: name,
+      email: email,
+      pass: pass,
+    };
+    credArr.push(credObj);
+    console.log(credArr);
+    localStorage.setItem("credentials", JSON.stringify(credArr));
 
-
-// Following are the things that we have to made to make them work
-
-
-document.getElementById('signinForm').addEventListener('submit', function (event) {
-  event.preventDefault()
-  console.log("Sign-In Process");
-
-  let email = document.querySelector('#logInemail').value;
-  let pass = document.querySelector('#logInpass').value;
-
-  console.log(email, pass);
-
-});
-
-//  Create an New Account for the User.
-let form = document.getElementById('signupForm')
-
-const password1El = document.getElementById('password1');
-const password2El = document.getElementById('password2');
-
-
-let isValid = false;
-let passwordsMatch = false;
-
-function validateForm() {
-  // Use HTML constraint API to check form validity
-  isValid = form.checkValidity();
-  // If the form isn't valid
-  if (!isValid) {
-    // Style main message for an error
-    message.textContent = 'Please fill out all fields.';
-    message.style.color = 'red';
-    messageContainer.style.borderColor = 'red';
-    return;
+      alert("Signup completed")
   }
-  // Check to see if both password fields match
-  if (password1El.value === password2El.value) {
-    // If they match, set value to true and borders to green
-    passwordsMatch = true;
-    password1El.style.borderColor = 'green';
-    password2El.style.borderColor = 'green';
-  } else {
-    // If they don't match, border color of input to red, change message
-    passwordsMatch = false;
-    message.textContent = 'Make sure passwords match.';
-    message.style.color = 'red';
-    messageContainer.style.borderColor = 'red';
-    password1El.style.borderColor = 'red';
-    password2El.style.borderColor = 'red';
-    return;
-  }
-  // If form is valid and passwords match
-  if (isValid && passwordsMatch) {
-    // Style main message for success
-    message.textContent = 'Successfully Registered!';
-    message.style.color = 'green';
-    messageContainer.style.borderColor = 'green';
-  }
-}
 
-function storeFormData(e) {
-  e.preventDefault()
-  const user = {
-    name: form.name.value,
-    phone: form.phone.value,
-    email: form.email.value,
-    website: form.website.value,
-    password: form.password.value,
-  };
-  // Do something with user data
-  console.log(user);
-}
+  else {
+    alert("Password did not match")
+  }
+    }
+  
 
-function processFormData(e) {
-  e.preventDefault();
-  // Validate Form
-  validateForm();
-  // Submit Form if Valid
-  if (isValid && passwordsMatch) {
-    storeFormData();
+document.querySelector("#signinForm").addEventListener("submit", loginPage)
+
+
+function loginPage(event) {
+
+  event.preventDefault();
+  var loginCredentials = JSON.parse(localStorage.getItem("logindata")) || []
+  var signupData = JSON.parse(localStorage.getItem("credentials")) || [];
+  var email1 = document.querySelector("#logInemail").value;
+  var password1 = document.querySelector("#logInpass").value;
+
+  var flag = false;
+  for (var i = 0; i < signupData.length; i++) {
+
+    if (signupData[i].email == email1 && signupData[i].pass == password1) {
+      flag = true;
+      var name1 = signupData[i].input
+      var phone1 = signupData[i].number
+      break;
+    }
+    else {
+      flag = false;
+    }
+  }
+  if (flag == true) {
+    alert("login success")
+    obj = {
+      name: name1,
+      phone: phone1,
+    }
+    loginCredentials.push(obj)
+    localStorage.setItem("logindata", JSON.stringify(loginCredentials))
+    let purchase = JSON.parse(localStorage.getItem("cart_data"))
+    if (purchase.length == 0) {
+      window.location.href = "/index.html"
+    }
+    else {
+      window.location.href = "../Pages/cart.html"
+    }
+  }
+  else {
+    alert("Credientials did not matched, make sure you have registered")
   }
 }
-
-
-// Event Listener
-form.addEventListener('submit', processFormData);

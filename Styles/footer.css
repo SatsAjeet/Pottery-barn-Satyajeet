@@ -2,7 +2,6 @@
     background-color: #e6e3de;
     width: 100%;
     height: 450px;
-
 }
 #footer-main{
     width: 100%;
@@ -46,4 +45,10 @@ border: none;
 }
 #lastParaFooter{
     margin-top: 30px;
+}
+
+@media all and (min-width:200px) and (max-width:420px){
+    #footer{
+        display: none;
+    }
 }
