@@ -12,7 +12,7 @@ We have tried our best to make a fully-functional clone of Pottery Barn website 
 <p float="left">
     <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_640.png" width="100" height="100">
     <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png" width="100" height="100">
-   <img src="https://raw.githubusercontent.com/krishaayjois21/krishaayjois21/master/assets/javascript.png" width="100" height="100">
+   <img src="https://github.com/voodootikigod/logo.js/raw/master/js.png" width="100" height="100">
  </p>
 
 ## Functionalities associated with this website
